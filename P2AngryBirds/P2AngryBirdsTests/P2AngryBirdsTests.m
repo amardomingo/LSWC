@@ -1,18 +1,18 @@
 //
-//  P2_Angry_BirdsTests.m
-//  P2 Angry BirdsTests
+//  P2AngryBirdsTests.m
+//  P2AngryBirdsTests
 //
 //  Created by g111 DIT UPM on 25/02/14.
-//  Copyright (c) 2014 UPM. All rights reserved.
+//  Copyright (c) 2014 g111 DIT UPM. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface P2_Angry_BirdsTests : XCTestCase
+@interface P2AngryBirdsTests : XCTestCase
 
 @end
 
-@implementation P2_Angry_BirdsTests
+@implementation P2AngryBirdsTests
 
 - (void)setUp
 {

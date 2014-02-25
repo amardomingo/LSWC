@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:P2 Angry Birds.xcodeproj">
+      location = "self:P2AngryBirds.xcodeproj">
    </FileRef>
 </Workspace>
