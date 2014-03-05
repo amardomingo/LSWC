@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface P2TrayectoryView : UIView
+@class P2TrayectoryView;
+
+@protocol TrajectoryDatasource
+
+-(CGFloat) trajViewStartTime:(P2TrayectoryView *)tv;
+-(CGFloat) trajViewEndTime:(P2TrayectoryView *)tv;
+-(CGFloat) trajViewZoom:(P2TrayectoryView *)tv;
+-(CGFloat) trajView:(P2TrayectoryView *)tv heightAt:(CGFloat)time;
+-(CGFloat) trajView:(P2TrayectoryView *)tv distanceAt:(CGFloat)time;
+
 
 @end
+
+@interface P2TrayectoryView : UIView
+@property(nonatomic,weak) id<TrajectoryDatasource> datasource;
+@end
+

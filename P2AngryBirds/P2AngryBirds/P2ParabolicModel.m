@@ -12,12 +12,12 @@
 @implementation P2ParabolicModel
 
 - (CGFloat) heightAt: (CGFloat) time{
-    return [self initialSpeed]*time-0.5*G*time*time;
+    return self.initialSpeed*sin([self initialAngle])*time-0.5*G*time*time;
 }
 - (CGFloat) distanceAt: (CGFloat) time{
-    return [self initialSpeed]*time;
+    return self.initialSpeed*cos([self initialAngle])*time;
 }
 - (CGFloat) duration{
-    return 2*[self initialSpeed]*sin([self initialAngle])/G;
+    return 2*self.initialSpeed*sin([self initialAngle])/G;
 }
 @end

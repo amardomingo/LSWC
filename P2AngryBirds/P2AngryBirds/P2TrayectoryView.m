@@ -7,6 +7,7 @@
 //
 
 #import "P2TrayectoryView.h"
+#import "P2ViewController.h"
 
 @implementation P2TrayectoryView
 
@@ -14,17 +15,24 @@
 - (void)drawRect:(CGRect)rect
 {
     UIBezierPath *traj = [UIBezierPath bezierPath];
-    [traj moveToPoint:CGPointMake(0, 0)];
-    CGFloat posX = 0;
-    CGFloat posY = 0;
-    for(CGFloat t = 0; t<10; t+=0.1){
-        posX+=5; posY+=3;
+    CGFloat t0 = [self.datasource trajViewStartTime:self];
+    CGFloat t1 = [self.datasource trajViewEndTime:self];
+    CGFloat posX = [self.datasource trajView:self distanceAt:t0];
+    CGFloat posY = [self zoom:[self.datasource trajViewZoom:self]  heightToPixel:[self.datasource trajView:self heightAt:t0]];
+    [traj moveToPoint:CGPointMake(posX, posY)];
+    for(CGFloat t = t0; t<=t1; t+=0.001){
+        posX=[self.datasource trajView:self distanceAt:t];
+        posY=[self zoom:[self.datasource trajViewZoom:self] heightToPixel:[self.datasource trajView:self heightAt:t]];
         [traj addLineToPoint:CGPointMake(posX, posY)];
-    }
+    }    
     [traj setLineWidth:3];
     [[UIColor redColor] set];
     [traj stroke];
 }
 
+-(CGFloat) zoom:(CGFloat) zoom heightToPixel:(CGFloat) height{
+    CGFloat h = self.bounds.size.height;
+    return h -  height*h/(h-zoom);
+}
 
 @end
