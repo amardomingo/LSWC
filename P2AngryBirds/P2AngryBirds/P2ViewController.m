@@ -22,6 +22,8 @@
 
 - (IBAction)changeAngle:(UISlider *)sender {
     self.model.initialAngle = sender.value;
+    self.creeperCannon.transform = CGAffineTransformMakeRotation( 2*M_PI - self.model.initialAngle);
+    [self.creeperCannon setNeedsDisplay];
     [self.trajView setNeedsDisplay];
 }
 
@@ -36,37 +38,33 @@
     self.model.zoom = sender.value;
     [self.trajView setNeedsDisplay];
 }
-/*
--(P2ParabolicModel * ) model{
-    if(_model){
-        _model = [[P2ParabolicModel alloc] init];
-    }
-    return _model;
-}
-*/
 
 - (void) loadView{
     [super loadView];
-    CGFloat minSlider = self.trajView.bounds.size.width/2;
-    [self.distanceSlider setMinimumValue: minSlider];
-    CGFloat maxSlider = self.trajView.bounds.size.width - self.targetImage.bounds.size.width/2;
-    [self.distanceSlider setMaximumValue: maxSlider];
-    [self.distanceSlider setValue: minSlider];
-    [self.trajView setNeedsDisplay];
-    [self.targetImage setNeedsDisplay];
+    self.view.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    [self updateDistanceSize];
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.trajView.datasource=self;
+    /*
+    CGFloat anchorX = -0.01;//-self.creeperCannon.bounds.size.width/2;
+    CGFloat anchorY = -00,00;//-self.creeperCannon.bounds.size.height/2;
+    self.creeperCannon.layer.anchorPoint = CGPointMake(anchorX, anchorY);
+*/
     [self changeAngle:self.angleSlider];
     [self changeSpeed:self.speedSlider];
     [self changeDistance:self.distanceSlider];
     [self changeZoom:self.zoomSlider];
     
-    
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    [self updateDistanceSize];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -88,6 +86,17 @@
 
 -(CGFloat) trajViewZoom:(P2TrayectoryView *)tv{
     return self.model.zoom;
+}
+
+-(void) updateDistanceSize{
+    CGFloat minSlider = self.trajView.bounds.size.width/2;
+    [self.distanceSlider setMinimumValue: minSlider];
+    CGFloat maxSlider = self.trajView.bounds.size.width - self.targetImage.bounds.size.width/2;
+    [self.distanceSlider setMaximumValue: maxSlider];
+    [self.distanceSlider setValue: minSlider];
+    [self changeDistance:self.distanceSlider];
+    [self.trajView setNeedsDisplay];
+    [self.targetImage setNeedsDisplay];
 }
 
 

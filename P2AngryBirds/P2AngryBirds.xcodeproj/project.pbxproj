@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8402DD8418C8EE970004413D /* Steve_PMC.png in Resources */ = {isa = PBXBuildFile; fileRef = 8402DD8318C8EE970004413D /* Steve_PMC.png */; };
+		8402DD8618C8F0E40004413D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8402DD8518C8F0E40004413D /* background.jpg */; };
+		8402DD8818C8F33C0004413D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8402DD8718C8F33C0004413D /* background.png */; };
+		8402DD8A18C8FF210004413D /* CannnonBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 8402DD8918C8FF210004413D /* CannnonBase.png */; };
+		8402DD9218C90D640004413D /* CannnonCreeper(2).png in Resources */ = {isa = PBXBuildFile; fileRef = 8402DD9118C90D640004413D /* CannnonCreeper(2).png */; };
 		8461B63E18BD0B3B00620B07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8461B63D18BD0B3B00620B07 /* Foundation.framework */; };
 		8461B64018BD0B3B00620B07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8461B63F18BD0B3B00620B07 /* CoreGraphics.framework */; };
 		8461B64218BD0B3B00620B07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8461B64118BD0B3B00620B07 /* UIKit.framework */; };
@@ -37,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8402DD8318C8EE970004413D /* Steve_PMC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Steve_PMC.png; sourceTree = "<group>"; };
+		8402DD8518C8F0E40004413D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		8402DD8718C8F33C0004413D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		8402DD8918C8FF210004413D /* CannnonBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CannnonBase.png; sourceTree = "<group>"; };
+		8402DD9118C90D640004413D /* CannnonCreeper(2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CannnonCreeper(2).png"; sourceTree = "<group>"; };
 		8461B63A18BD0B3B00620B07 /* P2AngryBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2AngryBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461B63D18BD0B3B00620B07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8461B63F18BD0B3B00620B07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +141,11 @@
 				8461B67518BD0D9B00620B07 /* P2TrayectoryView.h */,
 				8461B67618BD0D9B00620B07 /* P2TrayectoryView.m */,
 				8461B65818BD0B3B00620B07 /* Images.xcassets */,
+				8402DD8518C8F0E40004413D /* background.jpg */,
+				8402DD8718C8F33C0004413D /* background.png */,
+				8402DD8318C8EE970004413D /* Steve_PMC.png */,
+				8402DD8918C8FF210004413D /* CannnonBase.png */,
+				8402DD9118C90D640004413D /* CannnonCreeper(2).png */,
 				8461B64418BD0B3B00620B07 /* Supporting Files */,
 			);
 			path = P2AngryBirds;
@@ -242,10 +257,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8402DD9218C90D640004413D /* CannnonCreeper(2).png in Resources */,
+				8402DD8A18C8FF210004413D /* CannnonBase.png in Resources */,
+				8402DD8418C8EE970004413D /* Steve_PMC.png in Resources */,
 				8461B65418BD0B3B00620B07 /* Main_iPad.storyboard in Resources */,
+				8402DD8818C8F33C0004413D /* background.png in Resources */,
 				8461B65918BD0B3B00620B07 /* Images.xcassets in Resources */,
 				8461B65118BD0B3B00620B07 /* Main_iPhone.storyboard in Resources */,
 				8461B64818BD0B3B00620B07 /* InfoPlist.strings in Resources */,
+				8402DD8618C8F0E40004413D /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +507,7 @@
 				8461B67118BD0B3B00620B07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8461B67218BD0B3B00620B07 /* Build configuration list for PBXNativeTarget "P2AngryBirdsTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +516,7 @@
 				8461B67418BD0B3B00620B07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -19,5 +19,9 @@
 @property (weak, nonatomic) IBOutlet UISlider *distanceSlider;
 @property (weak, nonatomic) IBOutlet UISlider *zoomSlider;
 @property (weak, nonatomic) IBOutlet UIImageView *targetImage;
+@property (weak, nonatomic) IBOutlet UIImageView *creeperCannon;
+@property (weak, nonatomic) IBOutlet UIImageView *baseCannon;
+
+
 -(P2ParabolicModel * ) model;
 @end
