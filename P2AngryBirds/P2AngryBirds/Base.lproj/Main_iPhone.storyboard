@@ -25,7 +25,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                     </imageView>
                                     <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CreeperPeq.png" id="aWY-To-bVP">
-                                        <rect key="frame" x="-38" y="447" width="89" height="45"/>
+                                        <rect key="frame" x="-41" y="448" width="89" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </imageView>
                                 </subviews>

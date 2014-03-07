@@ -16,7 +16,7 @@
 @implementation P2ViewController
 
 - (void) rotateCannon:(CGFloat) angle {
-    self.creeperCannon.transform = CGAffineTransformMakeRotation(  - self.model.initialAngle);
+    self.creeperCannon.transform = CGAffineTransformMakeRotation( - self.model.initialAngle);
 }
 
 -(void) checkHit{
