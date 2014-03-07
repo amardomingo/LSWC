@@ -15,14 +15,34 @@
 
 @implementation P2ViewController
 
+- (void) rotateCannon:(CGFloat) angle {
+    self.creeperCannon.transform = CGAffineTransformMakeRotation(  - self.model.initialAngle);
+}
+
+-(void) checkHit{
+    
+    CGFloat downlimit = [self trajView:self.trajView distanceAt:self.model.duration] - 15;
+    CGFloat uplimit = [self trajView:self.trajView distanceAt:self.model.duration] + 15;
+    
+    if(self.model.targetDistance > downlimit && self.model.targetDistance < uplimit){
+        [self.targetImage setHighlighted:YES];
+    }
+    else {
+        [self.targetImage setHighlighted:NO];
+    }
+    [self.targetImage setNeedsDisplay];
+}
+
 - (IBAction)changeSpeed:(UISlider *)sender {
     self.model.initialSpeed = sender.value;
+    [self checkHit];
     [self.trajView setNeedsDisplay];
 }
 
 - (IBAction)changeAngle:(UISlider *)sender {
     self.model.initialAngle = sender.value;
-    self.creeperCannon.transform = CGAffineTransformMakeRotation( 2*M_PI - self.model.initialAngle);
+    [self rotateCannon: sender.value];
+    [self checkHit];
     [self.creeperCannon setNeedsDisplay];
     [self.trajView setNeedsDisplay];
 }
@@ -31,7 +51,7 @@
     self.model.targetDistance = sender.value;
     CGFloat h = self.trajView.bounds.size.height - self.targetImage.bounds.size.height/2;
     [self.targetImage setCenter:CGPointMake(self.model.targetDistance, h)];
-
+    [self checkHit];
     [self.trajView setNeedsDisplay];
 }
 - (IBAction)changeZoom:(UISlider *)sender {
@@ -59,10 +79,16 @@
     [self changeDistance:self.distanceSlider];
     [self changeZoom:self.zoomSlider];
     
+    printf("%f, %f ", self.creeperCannon.frame.origin.x, self.creeperCannon.frame.origin.y );
+
+
+    
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    printf("%f, %f ", self.creeperCannon.frame.origin.x, self.creeperCannon.frame.origin.y );
+
     [self updateDistanceSize];
 }
 - (void)didReceiveMemoryWarning

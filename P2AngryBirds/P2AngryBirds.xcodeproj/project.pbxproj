@@ -11,7 +11,6 @@
 		8402DD8618C8F0E40004413D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8402DD8518C8F0E40004413D /* background.jpg */; };
 		8402DD8818C8F33C0004413D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8402DD8718C8F33C0004413D /* background.png */; };
 		8402DD8A18C8FF210004413D /* CannnonBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 8402DD8918C8FF210004413D /* CannnonBase.png */; };
-		8402DD9218C90D640004413D /* CannnonCreeper(2).png in Resources */ = {isa = PBXBuildFile; fileRef = 8402DD9118C90D640004413D /* CannnonCreeper(2).png */; };
 		8461B63E18BD0B3B00620B07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8461B63D18BD0B3B00620B07 /* Foundation.framework */; };
 		8461B64018BD0B3B00620B07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8461B63F18BD0B3B00620B07 /* CoreGraphics.framework */; };
 		8461B64218BD0B3B00620B07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8461B64118BD0B3B00620B07 /* UIKit.framework */; };
@@ -29,6 +28,8 @@
 		8461B66C18BD0B3B00620B07 /* P2AngryBirdsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B66B18BD0B3B00620B07 /* P2AngryBirdsTests.m */; };
 		8461B67718BD0D9B00620B07 /* P2TrayectoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B67618BD0D9B00620B07 /* P2TrayectoryView.m */; };
 		8461B67A18BD113C00620B07 /* P2ParabolicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B67918BD113C00620B07 /* P2ParabolicModel.m */; };
+		84E8FBC118C9DFEB00D58C75 /* SteveExploded.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E8FBC018C9DFEB00D58C75 /* SteveExploded.png */; };
+		84E8FBC518C9E82000D58C75 /* CreeperPeq.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E8FBC418C9E82000D58C75 /* CreeperPeq.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,6 @@
 		8402DD8518C8F0E40004413D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		8402DD8718C8F33C0004413D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		8402DD8918C8FF210004413D /* CannnonBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CannnonBase.png; sourceTree = "<group>"; };
-		8402DD9118C90D640004413D /* CannnonCreeper(2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CannnonCreeper(2).png"; sourceTree = "<group>"; };
 		8461B63A18BD0B3B00620B07 /* P2AngryBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2AngryBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461B63D18BD0B3B00620B07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8461B63F18BD0B3B00620B07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,6 +71,8 @@
 		8461B67618BD0D9B00620B07 /* P2TrayectoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P2TrayectoryView.m; sourceTree = "<group>"; };
 		8461B67818BD113C00620B07 /* P2ParabolicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P2ParabolicModel.h; sourceTree = "<group>"; };
 		8461B67918BD113C00620B07 /* P2ParabolicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P2ParabolicModel.m; sourceTree = "<group>"; };
+		84E8FBC018C9DFEB00D58C75 /* SteveExploded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SteveExploded.png; sourceTree = "<group>"; };
+		84E8FBC418C9E82000D58C75 /* CreeperPeq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CreeperPeq.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +146,9 @@
 				8402DD8518C8F0E40004413D /* background.jpg */,
 				8402DD8718C8F33C0004413D /* background.png */,
 				8402DD8318C8EE970004413D /* Steve_PMC.png */,
+				84E8FBC018C9DFEB00D58C75 /* SteveExploded.png */,
 				8402DD8918C8FF210004413D /* CannnonBase.png */,
-				8402DD9118C90D640004413D /* CannnonCreeper(2).png */,
+				84E8FBC418C9E82000D58C75 /* CreeperPeq.png */,
 				8461B64418BD0B3B00620B07 /* Supporting Files */,
 			);
 			path = P2AngryBirds;
@@ -257,13 +260,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8402DD9218C90D640004413D /* CannnonCreeper(2).png in Resources */,
 				8402DD8A18C8FF210004413D /* CannnonBase.png in Resources */,
 				8402DD8418C8EE970004413D /* Steve_PMC.png in Resources */,
+				84E8FBC118C9DFEB00D58C75 /* SteveExploded.png in Resources */,
 				8461B65418BD0B3B00620B07 /* Main_iPad.storyboard in Resources */,
 				8402DD8818C8F33C0004413D /* background.png in Resources */,
 				8461B65918BD0B3B00620B07 /* Images.xcassets in Resources */,
 				8461B65118BD0B3B00620B07 /* Main_iPhone.storyboard in Resources */,
+				84E8FBC518C9E82000D58C75 /* CreeperPeq.png in Resources */,
 				8461B64818BD0B3B00620B07 /* InfoPlist.strings in Resources */,
 				8402DD8618C8F0E40004413D /* background.jpg in Resources */,
 			);

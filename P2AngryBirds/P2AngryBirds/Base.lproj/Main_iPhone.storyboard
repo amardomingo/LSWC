@@ -12,21 +12,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="redraw" id="BgY-pl-DH1" customClass="P2TrayectoryView">
+                            <view opaque="NO" clipsSubviews="YES" contentMode="redraw" id="BgY-pl-DH1" customClass="P2TrayectoryView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Steve_PMC" id="f4V-ZO-ZIn">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Steve_PMC" highlightedImage="SteveExploded.png" id="f4V-ZO-ZIn">
                                         <rect key="frame" x="273" y="436" width="47" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Jyz-bk-S4g">
-                                        <rect key="frame" x="-15" y="425" width="82" height="60"/>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CannnonBase.png" id="Jyz-bk-S4g">
+                                        <rect key="frame" x="-31" y="425" width="96" height="67"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CannnonCreeper(2).png" id="aWY-To-bVP">
-                                        <rect key="frame" x="-92" y="456" width="161" height="57"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                    <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CreeperPeq.png" id="aWY-To-bVP">
+                                        <rect key="frame" x="-38" y="447" width="89" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </imageView>
                                 </subviews>
                             </view>
@@ -109,7 +109,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CannnonCreeper(2).png" width="2000" height="300"/>
+        <image name="CannnonBase.png" width="1000" height="600"/>
+        <image name="CreeperPeq.png" width="90" height="40"/>
+        <image name="SteveExploded.png" width="300" height="300"/>
         <image name="Steve_PMC" width="240" height="290"/>
     </resources>
     <color key="tintColor" red="0.70756442346364223" green="1" blue="0.30198198990013525" alpha="1" colorSpace="calibratedRGB"/>
