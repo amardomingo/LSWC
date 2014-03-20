@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84A3439E18DB6813005DE17D /* LoveDateChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3439D18DB6813005DE17D /* LoveDateChooserViewController.m */; };
+		84A343A118DB6AE8005DE17D /* DeathDateChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A343A018DB6AE8005DE17D /* DeathDateChooserViewController.m */; };
 		84A63EFA18D8B9AD00129D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A63EF918D8B9AD00129D07 /* Foundation.framework */; };
 		84A63EFC18D8B9AD00129D07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A63EFB18D8B9AD00129D07 /* CoreGraphics.framework */; };
 		84A63EFE18D8B9AD00129D07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A63EFD18D8B9AD00129D07 /* UIKit.framework */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84A3439C18DB6813005DE17D /* LoveDateChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoveDateChooserViewController.h; sourceTree = "<group>"; };
+		84A3439D18DB6813005DE17D /* LoveDateChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveDateChooserViewController.m; sourceTree = "<group>"; };
+		84A3439F18DB6AE8005DE17D /* DeathDateChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeathDateChooserViewController.h; sourceTree = "<group>"; };
+		84A343A018DB6AE8005DE17D /* DeathDateChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeathDateChooserViewController.m; sourceTree = "<group>"; };
 		84A63EF618D8B9AD00129D07 /* MiMediaNaranja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiMediaNaranja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A63EF918D8B9AD00129D07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84A63EFB18D8B9AD00129D07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +128,10 @@
 				84A63F0F18D8B9AD00129D07 /* P3ViewController.m */,
 				84A63F2E18D8BAB500129D07 /* BirthDateChooserViewController.h */,
 				84A63F2F18D8BAB500129D07 /* BirthDateChooserViewController.m */,
+				84A3439C18DB6813005DE17D /* LoveDateChooserViewController.h */,
+				84A3439D18DB6813005DE17D /* LoveDateChooserViewController.m */,
+				84A3439F18DB6AE8005DE17D /* DeathDateChooserViewController.h */,
+				84A343A018DB6AE8005DE17D /* DeathDateChooserViewController.m */,
 				84A63F1118D8B9AD00129D07 /* Images.xcassets */,
 				84A63F0018D8B9AD00129D07 /* Supporting Files */,
 			);
@@ -255,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A343A118DB6AE8005DE17D /* DeathDateChooserViewController.m in Sources */,
 				84A63F3018D8BAB500129D07 /* BirthDateChooserViewController.m in Sources */,
+				84A3439E18DB6813005DE17D /* LoveDateChooserViewController.m in Sources */,
 				84A63F0618D8B9AD00129D07 /* main.m in Sources */,
 				84A63F1018D8B9AD00129D07 /* P3ViewController.m in Sources */,
 				84A63F0A18D8B9AD00129D07 /* P3AppDelegate.m in Sources */,
@@ -467,6 +479,7 @@
 				84A63F2A18D8B9AD00129D07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84A63F2B18D8B9AD00129D07 /* Build configuration list for PBXNativeTarget "MiMediaNaranjaTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +488,7 @@
 				84A63F2D18D8B9AD00129D07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

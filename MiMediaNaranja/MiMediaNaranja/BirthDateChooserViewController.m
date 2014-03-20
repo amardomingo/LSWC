@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.datePicker setMaximumDate:[NSDate date]];
 	if(self.birthDate) self.datePicker.date = self.birthDate;
 }
 
