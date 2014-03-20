@@ -17,10 +17,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	//self.datePicker.date = self.birthDate;
+	if(self.birthDate) self.datePicker.date = self.birthDate;
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue{
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"okBirth"]){
         self.birthDate = self.datePicker.date;
     } else if([segue.identifier isEqualToString:@"cancelBirth"]){
