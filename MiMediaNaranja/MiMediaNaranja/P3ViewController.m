@@ -31,9 +31,15 @@
     return dateFormated;
 }
 
-- (void) showAlert: (NSString *) msg withTitle: (NSString *) title {
+- (void) showAlert: (NSString *) msg withTitle: (NSString *) title hideResults:(BOOL) hideres{
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [message show];
+    if (hideres) {
+        self.loveDate = nil;
+        [self.resultLabel setText:@""];
+        self.HeartContainer.hidden = YES;
+        [self.loveButton setTitle:@"Elegir Fecha" forState:UIControlStateNormal];
+    }
 }
 
 - (void) setHeartImage:(CGFloat) part {
@@ -70,7 +76,8 @@
         [self.HeartContainer setNeedsDisplay];
         } else {
             // This shouldn't happen, but sometimes the dates don't check properly
-            [self showAlert:@"Alguna de las fechas que has marcado no encaja. ¡Revisalas!" withTitle:@"¡Fechas invalidas!"];
+            [self showAlert:@"Alguna de las fechas que has marcado no encaja. ¡Revisalas!" withTitle:@"¡Fechas invalidas!" hideResults:YES];
+            
         }
     }
 }
@@ -98,13 +105,9 @@
         [self.birthButton setTitle: dateFormated forState:UIControlStateNormal];
         
         if (self.loveDate != nil && self.loveDate < self.birthDate) {
-            // The birthdate has changed, and now the love date is invalid!
-            self.loveDate = nil;
-            [self.resultLabel setText:@"Resultado"];
-            self.HeartContainer.hidden = YES;
-            [self.loveButton setTitle:@"Elegir Fecha" forState:UIControlStateNormal];
-            // We alert the user. Just because
-            [self showAlert:@"La fecha de enamoramiento es menor que la de nacimiento. Por favor, actualizala" withTitle:@"¡Fecha de enamoramiento invalida!"];
+            // The loveDate cannot be greater than the death date, so we alert the user and
+            // reset the results
+            [self showAlert:@"La fecha de enamoramiento es menor que la de nacimiento. Por favor, actualizala" withTitle:@"¡Fecha de enamoramiento invalida!" hideResults:YES];
         }
     }
 }
@@ -134,13 +137,9 @@
         [self.deathButton setTitle: dateFormated forState:UIControlStateNormal];
     
         if (self.loveDate != nil && self.loveDate > self.deathDate) {
-            // The loveDate cannot be greater than the death date, so we reset it.
-            self.loveDate = nil;
-            [self.resultLabel setText:@"Resultado"];
-            self.HeartContainer.hidden = YES;
-            [self.loveButton setTitle:@"Elegir Fecha" forState:UIControlStateNormal];
-            // We alert the user. Just because  
-            [self showAlert:@"La fecha de enamoramiento es mayor que la de muerte. Por favor, actualizala" withTitle:@"¡Fecha de enamoramiento invalida!"];
+            // The loveDate cannot be greater than the death date, so we alert the user and
+            // reset the results
+            [self showAlert:@"La fecha de enamoramiento es mayor que la de muerte. Por favor, actualizala" withTitle:@"¡Fecha de enamoramiento invalida!" hideResults: YES];
         }
     }
 }
