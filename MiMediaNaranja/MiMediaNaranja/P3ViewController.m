@@ -27,23 +27,37 @@
     return dateFormated;
 }
 
+- (void) showAlert: (NSString *) msg withTitle: (NSString *) title {
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [message show];
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Probably a better idea to use a UIImageView
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed: @"KorkoriForest.jpg"]]];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    // Since this view shouldn't unload, we place this here to run
+    // the check every time we return from a segue
     if(self.birthDate==nil || self.deathDate==nil){
         [self.loveButton setEnabled:NO];
     } else {
         [self.loveButton setEnabled:YES];
     }
     
+    // TODO: Recheck the math on this.
     if(self.birthDate!=nil && self.deathDate!=nil && self.loveDate != nil){
         CGFloat total = [self.deathDate timeIntervalSince1970] - [self.birthDate timeIntervalSince1970];
         CGFloat love = [self.loveDate timeIntervalSince1970] - [self.birthDate timeIntervalSince1970];
-        CGFloat perc = love / total;
+        // Not sure wich one is the correct one, I think the first one
+        CGFloat perc = (total - love) / total;
+        //CGFloat perc = love / total;
         [self.resultLabel setText: [NSString stringWithFormat:@"%.2f%%",perc*100]];
     }
 }
@@ -69,6 +83,14 @@
         self.birthDate = vc.birthDate;
         NSString * dateFormated = [self formatDate:self.birthDate];
         [self.birthButton setTitle: dateFormated forState:UIControlStateNormal];
+        
+        if (self.loveDate != nil && self.loveDate < self.birthDate) {
+            // The birthdate has changed, and now the love date is invalid!
+            self.loveDate = nil;
+            [self.loveButton setTitle:@"Elegir Fecha" forState:UIControlStateNormal];
+            // We alert the user. Just because
+            [self showAlert:@"La fecha de enamoramiento es menor que la de nacimiento. Por favor, actualizala" withTitle:@"¡Fecha de enamoramiento invalida!"];
+        }
     }
 }
 
@@ -95,12 +117,19 @@
         self.deathDate = vc.deathDate;
         NSString * dateFormated = [self formatDate:self.deathDate];
         [self.deathButton setTitle: dateFormated forState:UIControlStateNormal];
+    
+        if (self.loveDate != nil && self.loveDate > self.deathDate) {
+            // The loveDate cannot be greater than the death date, so we reset it.
+            self.loveDate = nil;
+            [self.loveButton setTitle:@"Elegir Fecha" forState:UIControlStateNormal];
+            // We alert the user. Just because  
+            [self showAlert:@"La fecha de enamoramiento es mayor que la de muerte. Por favor, actualizala" withTitle:@"¡Fecha de enamoramiento invalida!"];
+        }
     }
 }
 
 -(IBAction)deathCanceled:(UIStoryboardSegue *)segue{
     
 }
-
 
 @end
