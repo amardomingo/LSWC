@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
     [self.datePicker setMaximumDate:[NSDate date]];
+    [self.datePicker setBackgroundColor:[UIColor whiteColor]];
 	if(self.birthDate) self.datePicker.date = self.birthDate;
 }
 

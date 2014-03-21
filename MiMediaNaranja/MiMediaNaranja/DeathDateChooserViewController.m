@@ -14,12 +14,11 @@
 
 @implementation DeathDateChooserViewController
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.datePicker setMinimumDate:[NSDate date]];
+    [self.datePicker setBackgroundColor:[UIColor whiteColor]];
 	if(self.deathDate) self.datePicker.date = self.deathDate;
 }
 

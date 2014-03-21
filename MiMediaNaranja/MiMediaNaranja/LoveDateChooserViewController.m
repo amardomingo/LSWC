@@ -20,6 +20,7 @@
     [super viewDidLoad];
     [self.datePicker setMinimumDate:self.birthDate];
     [self.datePicker setMaximumDate:self.deathDate];
+    [self.datePicker setBackgroundColor:[UIColor whiteColor]];
 	if(self.loveDate) self.datePicker.date = self.loveDate;
 }
 

@@ -16,96 +16,159 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Principal.png" translatesAutoresizingMaskIntoConstraints="NO" id="Htb-Mp-VQ8">
-                                <rect key="frame" x="0.0" y="-8" width="320" height="488"/>
+                            <imageView userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Principal.png" translatesAutoresizingMaskIntoConstraints="NO" id="Htb-Mp-VQ8">
+                                <rect key="frame" x="0.0" y="-8" width="488" height="488"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mi Media Naranja" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yr2-9k-HeQ">
-                                <rect key="frame" x="93" y="37" width="135" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi Media Naranja" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yr2-9k-HeQ">
+                                <rect key="frame" x="93" y="35" width="135" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzf-GS-fbq">
-                                <rect key="frame" x="207" y="113" width="85" height="30"/>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xY-bv-EGR">
+                                <rect key="frame" x="195" y="163" width="100" height="205"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Elegir Fecha">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="t1w-bq-5r0" kind="modal" identifier="selectBirth" id="03R-KY-4fZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtO-Kx-Gad">
-                                <rect key="frame" x="207" y="257" width="85" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLe-wM-4mO">
+                                        <rect key="frame" x="10" y="39" width="80" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pqy-Hi-ufB">
+                                        <rect key="frame" x="10" y="86" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pqy-Hi-ufB" firstAttribute="top" secondItem="GLe-wM-4mO" secondAttribute="bottom" constant="26" id="GiB-Sj-bxZ"/>
+                                    <constraint firstItem="GLe-wM-4mO" firstAttribute="leading" secondItem="4xY-bv-EGR" secondAttribute="leading" constant="10" id="OJm-a8-3hJ"/>
+                                    <constraint firstItem="GLe-wM-4mO" firstAttribute="centerX" secondItem="4xY-bv-EGR" secondAttribute="centerX" id="cdq-ST-eXo"/>
+                                    <constraint firstItem="Pqy-Hi-ufB" firstAttribute="trailing" secondItem="GLe-wM-4mO" secondAttribute="trailing" id="iYm-eJ-Pfn"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pqy-Hi-ufB" secondAttribute="bottom" constant="39" id="khn-NK-ykh"/>
+                                    <constraint firstItem="Pqy-Hi-ufB" firstAttribute="leading" secondItem="GLe-wM-4mO" secondAttribute="leading" id="zSo-1c-BiC"/>
+                                    <constraint firstItem="GLe-wM-4mO" firstAttribute="top" secondItem="4xY-bv-EGR" secondAttribute="top" constant="39" id="zwJ-gV-L56"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K1L-3E-MbX">
+                                <rect key="frame" x="25" y="141" width="160" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Elegir Fecha">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="nnA-OV-mwv" kind="modal" identifier="selectLove" id="3Y5-fb-XcZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Z6-zE-PFP">
-                                <rect key="frame" x="207" y="192" width="85" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Cuando naciste?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJw-XI-DNk">
+                                        <rect key="frame" x="11" y="6" width="140" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzf-GS-fbq">
+                                        <rect key="frame" x="38" y="35" width="85" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Elegir Fecha">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="t1w-bq-5r0" kind="modal" identifier="selectBirth" id="03R-KY-4fZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DJw-XI-DNk" firstAttribute="centerX" secondItem="pzf-GS-fbq" secondAttribute="centerX" id="7KV-Pq-6sR"/>
+                                    <constraint firstItem="pzf-GS-fbq" firstAttribute="leading" secondItem="K1L-3E-MbX" secondAttribute="leading" constant="38" id="JUd-uU-4Qn"/>
+                                    <constraint firstItem="pzf-GS-fbq" firstAttribute="top" secondItem="K1L-3E-MbX" secondAttribute="top" constant="35" id="bHs-5A-47e"/>
+                                    <constraint firstAttribute="bottom" secondItem="pzf-GS-fbq" secondAttribute="bottom" constant="8" id="mou-nc-nyS"/>
+                                    <constraint firstItem="pzf-GS-fbq" firstAttribute="centerX" secondItem="K1L-3E-MbX" secondAttribute="centerX" id="oyo-7e-05z"/>
+                                    <constraint firstItem="pzf-GS-fbq" firstAttribute="top" secondItem="DJw-XI-DNk" secondAttribute="bottom" constant="8" symbolic="YES" id="woy-d2-E1H"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRn-pJ-hqR">
+                                <rect key="frame" x="25" y="235" width="160" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Elegir Fecha">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="5IG-4K-Pby" kind="modal" identifier="selectDeath" id="uzs-fP-xo6"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="¿Cuando naciste?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJw-XI-DNk">
-                                <rect key="frame" x="20" y="88" width="140" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Cuando morirás?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxY-By-JBw">
+                                        <rect key="frame" x="9" y="7" width="142" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Z6-zE-PFP">
+                                        <rect key="frame" x="38" y="30" width="85" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Elegir Fecha">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="5IG-4K-Pby" kind="modal" identifier="selectDeath" id="uzs-fP-xo6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1Z6-zE-PFP" firstAttribute="centerX" secondItem="BxY-By-JBw" secondAttribute="centerX" id="BUb-rW-T1b"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Z6-zE-PFP" secondAttribute="bottom" id="GBJ-Tf-fwn"/>
+                                    <constraint firstItem="1Z6-zE-PFP" firstAttribute="top" secondItem="BxY-By-JBw" secondAttribute="bottom" constant="2" id="Pfv-y6-r8D"/>
+                                    <constraint firstItem="BxY-By-JBw" firstAttribute="centerX" secondItem="GRn-pJ-hqR" secondAttribute="centerX" id="iEC-tP-cbA"/>
+                                    <constraint firstItem="BxY-By-JBw" firstAttribute="leading" secondItem="GRn-pJ-hqR" secondAttribute="leading" constant="9" id="z6B-vQ-raS"/>
+                                    <constraint firstItem="BxY-By-JBw" firstAttribute="top" secondItem="GRn-pJ-hqR" secondAttribute="top" constant="7" id="zP7-IG-1la"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biV-vm-JDy">
+                                <rect key="frame" x="25" y="315" width="160" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="¿Cuando os conocisteis?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYT-0e-FHX">
-                                <rect key="frame" x="12" y="241" width="195" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="¿Cuando morirás?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxY-By-JBw">
-                                <rect key="frame" x="12" y="165" width="142" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Resultado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLe-wM-4mO">
-                                <rect key="frame" x="130" y="318" width="65" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pqy-Hi-ufB">
-                                <rect key="frame" x="120" y="344" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Cuando os  conocisteis?" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="oYT-0e-FHX">
+                                        <rect key="frame" x="30" y="-10" width="100" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="IGC-8W-c3B"/>
+                                            <constraint firstAttribute="width" constant="100" id="h0Z-rC-hiR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtO-Kx-Gad">
+                                        <rect key="frame" x="38" y="51" width="85" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Elegir Fecha">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="nnA-OV-mwv" kind="modal" identifier="selectLove" id="3Y5-fb-XcZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BtO-Kx-Gad" secondAttribute="bottom" id="FBp-qm-kay"/>
+                                    <constraint firstItem="oYT-0e-FHX" firstAttribute="top" secondItem="biV-vm-JDy" secondAttribute="top" constant="-10" id="Ze0-O9-ZSt"/>
+                                    <constraint firstAttribute="bottom" secondItem="oYT-0e-FHX" secondAttribute="bottom" constant="27" id="k9A-Gw-GS3"/>
+                                    <constraint firstItem="oYT-0e-FHX" firstAttribute="leading" secondItem="biV-vm-JDy" secondAttribute="leading" constant="30" id="lU5-dO-u0T"/>
+                                    <constraint firstItem="oYT-0e-FHX" firstAttribute="centerX" secondItem="biV-vm-JDy" secondAttribute="centerX" id="m7Y-gj-Wu6"/>
+                                    <constraint firstItem="BtO-Kx-Gad" firstAttribute="centerX" secondItem="oYT-0e-FHX" secondAttribute="centerX" id="rTI-pg-wKf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DJw-XI-DNk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="1h5-HU-1uJ"/>
-                            <constraint firstItem="kWk-N5-gI9" firstAttribute="top" secondItem="Pqy-Hi-ufB" secondAttribute="bottom" constant="56" id="2WG-X8-A3g"/>
-                            <constraint firstItem="BtO-Kx-Gad" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="207" id="71A-A6-JII"/>
-                            <constraint firstItem="oYT-0e-FHX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="12" id="DyY-cf-vbA"/>
-                            <constraint firstItem="1Z6-zE-PFP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="207" id="GQH-jn-iuF"/>
-                            <constraint firstItem="Pqy-Hi-ufB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BtO-Kx-Gad" secondAttribute="trailing" priority="50" constant="8" id="LHR-Gn-yof"/>
-                            <constraint firstItem="pzf-GS-fbq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="207" id="LUT-Ys-4yz"/>
-                            <constraint firstAttribute="trailing" secondItem="Pqy-Hi-ufB" secondAttribute="trailing" priority="60" constant="120" id="YYX-Fu-6Fc"/>
-                            <constraint firstItem="BxY-By-JBw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="12" id="n1S-lx-Lak"/>
-                            <constraint firstItem="Pqy-Hi-ufB" firstAttribute="top" secondItem="GLe-wM-4mO" secondAttribute="bottom" constant="5" id="rdv-3s-i50"/>
-                            <constraint firstAttribute="trailing" secondItem="Pqy-Hi-ufB" secondAttribute="trailing" priority="40" constant="120" id="zj5-6p-3oj"/>
+                            <constraint firstItem="biV-vm-JDy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="25" id="44r-pn-fED"/>
+                            <constraint firstAttribute="centerX" secondItem="Yr2-9k-HeQ" secondAttribute="centerX" id="4lk-xa-y4l"/>
+                            <constraint firstItem="Yr2-9k-HeQ" firstAttribute="top" secondItem="Ia2-VX-xTy" secondAttribute="bottom" constant="15" id="80e-WX-uQ2"/>
+                            <constraint firstItem="GRn-pJ-hqR" firstAttribute="top" secondItem="K1L-3E-MbX" secondAttribute="bottom" constant="21" id="ExK-ME-vAI"/>
+                            <constraint firstItem="K1L-3E-MbX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="25" id="I40-yE-WSl"/>
+                            <constraint firstItem="biV-vm-JDy" firstAttribute="top" secondItem="GRn-pJ-hqR" secondAttribute="bottom" constant="20" id="SIr-CU-bIZ"/>
+                            <constraint firstItem="4xY-bv-EGR" firstAttribute="leading" secondItem="GRn-pJ-hqR" secondAttribute="trailing" constant="10" id="YJe-sf-W9n"/>
+                            <constraint firstItem="kWk-N5-gI9" firstAttribute="top" secondItem="Htb-Mp-VQ8" secondAttribute="bottom" id="YqM-GO-aFM"/>
+                            <constraint firstAttribute="trailing" secondItem="4xY-bv-EGR" secondAttribute="trailing" constant="25" id="goY-Fi-Pci"/>
+                            <constraint firstAttribute="centerY" secondItem="4xY-bv-EGR" secondAttribute="centerY" constant="-25" id="hTL-np-HRL"/>
+                            <constraint firstItem="Htb-Mp-VQ8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="oaF-kf-0zy"/>
+                            <constraint firstAttribute="centerY" secondItem="GRn-pJ-hqR" secondAttribute="centerY" constant="-25" id="xx8-0Q-9Wn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="HeartContainer" destination="Pqy-Hi-ufB" id="7Nh-lO-fEs"/>
                         <outlet property="birthButton" destination="pzf-GS-fbq" id="JPT-MK-L6B"/>
                         <outlet property="deathButton" destination="1Z6-zE-PFP" id="jNj-9M-8ju"/>
                         <outlet property="loveButton" destination="BtO-Kx-Gad" id="hc9-zx-PQk"/>
@@ -128,7 +191,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lHy-oH-UqJ">
+                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Nacimiento.png" translatesAutoresizingMaskIntoConstraints="NO" id="3jT-vg-EgU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <datePicker alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lHy-oH-UqJ">
                                 <rect key="frame" x="-80" y="159" width="480" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="416856818.73263597">
@@ -217,7 +284,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WPU-hW-6cS">
+                            <imageView userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Amor.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bpu-ag-YZi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <datePicker alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WPU-hW-6cS">
                                 <rect key="frame" x="-80" y="159" width="480" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="416856818.73263597">
@@ -269,7 +340,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="63" y="30" width="195" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -306,9 +377,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Og-fs-pO3">
+                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Muerte.png" translatesAutoresizingMaskIntoConstraints="NO" id="u2Y-r4-qdO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <datePicker opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Og-fs-pO3">
                                 <rect key="frame" x="-80" y="159" width="480" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <date key="date" timeIntervalSinceReferenceDate="416856818.73263597">
                                     <!--2014-03-18 17:33:38 +0000-->
                                 </date>
@@ -358,7 +435,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="89" y="30" width="142" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -385,8 +462,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
+        <image name="Amor.png" width="488" height="117.12000274658203"/>
         <image name="Heart.png" width="80" height="80"/>
-        <image name="Principal.png" width="488" height="76.800003051757812"/>
+        <image name="Muerte.png" width="488" height="117.12000274658203"/>
+        <image name="Nacimiento.png" width="488" height="117.12000274658203"/>
+        <image name="Principal.png" width="488" height="117.12000274658203"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

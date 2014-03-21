@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 g111 DIT UPM. All rights reserved.
 //
 
+#define HEARTSIZE 80
+
 #import "P3ViewController.h"
 #import "BirthDateChooserViewController.h"
 #import "LoveDateChooserViewController.h"
@@ -16,9 +18,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *loveButton;
 @property (weak, nonatomic) IBOutlet UIButton *deathButton;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *HeartContainer;
 @end
 
 @implementation P3ViewController
+
 
 -(NSString *) formatDate: (NSDate *) date{
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -32,13 +36,15 @@
     [message show];
 }
 
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Probably a better idea to use a UIImageView
-    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed: @"KorkoriForest.jpg"]]];
+- (void) setHeartImage:(CGFloat) part {
+    UIImage* img = [UIImage imageNamed:@"Heart.png"];
+    CGFloat width = part * HEARTSIZE;
+    CGRect imgFrame = CGRectMake(0, 0, width, HEARTSIZE);
+    CGImageRef imageRef = CGImageCreateWithImageInRect([img CGImage], imgFrame);
+    UIImage* subImage = [UIImage imageWithCGImage: imageRef];
+    [self.HeartContainer setImage: subImage];
+    self.HeartContainer.hidden = NO;
+    CGImageRelease(imageRef);
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -50,15 +56,22 @@
     } else {
         [self.loveButton setEnabled:YES];
     }
-    
-    // TODO: Recheck the math on this.
+
     if(self.birthDate!=nil && self.deathDate!=nil && self.loveDate != nil){
         CGFloat total = [self.deathDate timeIntervalSince1970] - [self.birthDate timeIntervalSince1970];
         CGFloat love = [self.loveDate timeIntervalSince1970] - [self.birthDate timeIntervalSince1970];
         // Not sure wich one is the correct one, I think the first one
         CGFloat perc = (total - love) / total;
+        
+        if (perc > 0 && perc <= 1 ) {
         //CGFloat perc = love / total;
         [self.resultLabel setText: [NSString stringWithFormat:@"%.2f%%",perc*100]];
+        [self setHeartImage:perc];
+        [self.HeartContainer setNeedsDisplay];
+        } else {
+            // This shouldn't happen, but sometimes the dates don't check properly
+            [self showAlert:@"Alguna de las fechas que has marcado no encaja. ¡Revisalas!" withTitle:@"¡Fechas invalidas!"];
+        }
     }
 }
 
@@ -87,6 +100,8 @@
         if (self.loveDate != nil && self.loveDate < self.birthDate) {
             // The birthdate has changed, and now the love date is invalid!
             self.loveDate = nil;
+            [self.resultLabel setText:@"Resultado"];
+            self.HeartContainer.hidden = YES;
             [self.loveButton setTitle:@"Elegir Fecha" forState:UIControlStateNormal];
             // We alert the user. Just because
             [self showAlert:@"La fecha de enamoramiento es menor que la de nacimiento. Por favor, actualizala" withTitle:@"¡Fecha de enamoramiento invalida!"];
@@ -121,6 +136,8 @@
         if (self.loveDate != nil && self.loveDate > self.deathDate) {
             // The loveDate cannot be greater than the death date, so we reset it.
             self.loveDate = nil;
+            [self.resultLabel setText:@"Resultado"];
+            self.HeartContainer.hidden = YES;
             [self.loveButton setTitle:@"Elegir Fecha" forState:UIControlStateNormal];
             // We alert the user. Just because  
             [self showAlert:@"La fecha de enamoramiento es mayor que la de muerte. Por favor, actualizala" withTitle:@"¡Fecha de enamoramiento invalida!"];

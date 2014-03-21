@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8410922618DC60A200D83FE9 /* Principal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8410922518DC60A200D83FE9 /* Principal.png */; };
 		8410922818DC62DB00D83FE9 /* Heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 8410922718DC62DB00D83FE9 /* Heart.png */; };
 		84A3439E18DB6813005DE17D /* LoveDateChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A3439D18DB6813005DE17D /* LoveDateChooserViewController.m */; };
 		84A343A118DB6AE8005DE17D /* DeathDateChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A343A018DB6AE8005DE17D /* DeathDateChooserViewController.m */; };
@@ -26,6 +25,13 @@
 		84A63F2318D8B9AD00129D07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84A63F2118D8B9AD00129D07 /* InfoPlist.strings */; };
 		84A63F2518D8B9AD00129D07 /* MiMediaNaranjaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A63F2418D8B9AD00129D07 /* MiMediaNaranjaTests.m */; };
 		84A63F3018D8BAB500129D07 /* BirthDateChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A63F2F18D8BAB500129D07 /* BirthDateChooserViewController.m */; };
+		84B9014718DCA98100158A56 /* Amor.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B9014318DCA98100158A56 /* Amor.png */; };
+		84B9014818DCA98100158A56 /* Muerte.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B9014418DCA98100158A56 /* Muerte.png */; };
+		84B9014918DCA98100158A56 /* Nacimiento.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B9014518DCA98100158A56 /* Nacimiento.png */; };
+		84B9014A18DCA98100158A56 /* Principal.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B9014618DCA98100158A56 /* Principal.png */; };
+		84B9014C18DCB35900158A56 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B9014B18DCB35900158A56 /* Icon-72.png */; };
+		84B9014E18DCB36B00158A56 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B9014D18DCB36B00158A56 /* Icon-Small.png */; };
+		84B9015018DCB37000158A56 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B9014F18DCB37000158A56 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8410922518DC60A200D83FE9 /* Principal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Principal.png; sourceTree = "<group>"; };
 		8410922718DC62DB00D83FE9 /* Heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Heart.png; sourceTree = "<group>"; };
 		84A3439C18DB6813005DE17D /* LoveDateChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoveDateChooserViewController.h; sourceTree = "<group>"; };
 		84A3439D18DB6813005DE17D /* LoveDateChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveDateChooserViewController.m; sourceTree = "<group>"; };
@@ -66,6 +71,13 @@
 		84A63F2418D8B9AD00129D07 /* MiMediaNaranjaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiMediaNaranjaTests.m; sourceTree = "<group>"; };
 		84A63F2E18D8BAB500129D07 /* BirthDateChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthDateChooserViewController.h; sourceTree = "<group>"; };
 		84A63F2F18D8BAB500129D07 /* BirthDateChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthDateChooserViewController.m; sourceTree = "<group>"; };
+		84B9014318DCA98100158A56 /* Amor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Amor.png; sourceTree = "<group>"; };
+		84B9014418DCA98100158A56 /* Muerte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Muerte.png; sourceTree = "<group>"; };
+		84B9014518DCA98100158A56 /* Nacimiento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nacimiento.png; sourceTree = "<group>"; };
+		84B9014618DCA98100158A56 /* Principal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Principal.png; sourceTree = "<group>"; };
+		84B9014B18DCB35900158A56 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		84B9014D18DCB36B00158A56 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		84B9014F18DCB37000158A56 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,11 +158,17 @@
 			isa = PBXGroup;
 			children = (
 				84A63F0118D8B9AD00129D07 /* MiMediaNaranja-Info.plist */,
-				8410922518DC60A200D83FE9 /* Principal.png */,
+				84B9014318DCA98100158A56 /* Amor.png */,
+				84B9014418DCA98100158A56 /* Muerte.png */,
+				84B9014518DCA98100158A56 /* Nacimiento.png */,
+				84B9014618DCA98100158A56 /* Principal.png */,
 				8410922718DC62DB00D83FE9 /* Heart.png */,
 				84A63F0218D8B9AD00129D07 /* InfoPlist.strings */,
 				84A63F0518D8B9AD00129D07 /* main.m */,
 				84A63F0718D8B9AD00129D07 /* MiMediaNaranja-Prefix.pch */,
+				84B9014B18DCB35900158A56 /* Icon-72.png */,
+				84B9014F18DCB37000158A56 /* Icon@2x.png */,
+				84B9014D18DCB36B00158A56 /* Icon-Small.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -251,9 +269,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8410922818DC62DB00D83FE9 /* Heart.png in Resources */,
+				84B9014818DCA98100158A56 /* Muerte.png in Resources */,
+				84B9014C18DCB35900158A56 /* Icon-72.png in Resources */,
+				84B9014A18DCA98100158A56 /* Principal.png in Resources */,
 				84A63F1218D8B9AD00129D07 /* Images.xcassets in Resources */,
-				8410922618DC60A200D83FE9 /* Principal.png in Resources */,
+				84B9015018DCB37000158A56 /* Icon@2x.png in Resources */,
+				84B9014718DCA98100158A56 /* Amor.png in Resources */,
 				84A63F0418D8B9AD00129D07 /* InfoPlist.strings in Resources */,
+				84B9014918DCA98100158A56 /* Nacimiento.png in Resources */,
+				84B9014E18DCB36B00158A56 /* Icon-Small.png in Resources */,
 				84A63F0D18D8B9AD00129D07 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
