@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Principal.png" translatesAutoresizingMaskIntoConstraints="NO" id="Htb-Mp-VQ8">
+                            <imageView userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Principal.png" translatesAutoresizingMaskIntoConstraints="NO" id="Htb-Mp-VQ8">
                                 <rect key="frame" x="0.0" y="-8" width="488" height="488"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4xY-bv-EGR">
-                                <rect key="frame" x="195" y="163" width="100" height="205"/>
+                                <rect key="frame" x="194" y="172" width="100" height="205"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLe-wM-4mO">
@@ -45,6 +45,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Pqy-Hi-ufB" firstAttribute="top" secondItem="GLe-wM-4mO" secondAttribute="bottom" constant="26" id="GiB-Sj-bxZ"/>
+                                    <constraint firstAttribute="width" constant="100" id="NoB-kL-Czy"/>
                                     <constraint firstItem="GLe-wM-4mO" firstAttribute="leading" secondItem="4xY-bv-EGR" secondAttribute="leading" constant="10" id="OJm-a8-3hJ"/>
                                     <constraint firstItem="GLe-wM-4mO" firstAttribute="centerX" secondItem="4xY-bv-EGR" secondAttribute="centerX" id="cdq-ST-eXo"/>
                                     <constraint firstItem="Pqy-Hi-ufB" firstAttribute="trailing" secondItem="GLe-wM-4mO" secondAttribute="trailing" id="iYm-eJ-Pfn"/>
