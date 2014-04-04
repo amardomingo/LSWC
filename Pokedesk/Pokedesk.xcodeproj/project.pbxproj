@@ -20,7 +20,6 @@
 		84A5088D18E1F44900C544B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A5086F18E1F44900C544B5 /* UIKit.framework */; };
 		84A5089518E1F44900C544B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84A5089318E1F44900C544B5 /* InfoPlist.strings */; };
 		84A5089718E1F44900C544B5 /* PokedeskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A5089618E1F44900C544B5 /* PokedeskTests.m */; };
-		84A508A518E1F55D00C544B5 /* RacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A508A418E1F55D00C544B5 /* RacesTableViewController.m */; };
 		84A509A918E1F76B00C544B5 /* 001.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84A508A718E1F76900C544B5 /* 001.gif */; };
 		84A509AA18E1F76B00C544B5 /* 002.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84A508A818E1F76900C544B5 /* 002.gif */; };
 		84A509AB18E1F76B00C544B5 /* 003.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84A508A918E1F76900C544B5 /* 003.gif */; };
@@ -310,8 +309,6 @@
 		84A5089218E1F44900C544B5 /* PokedeskTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PokedeskTests-Info.plist"; sourceTree = "<group>"; };
 		84A5089418E1F44900C544B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84A5089618E1F44900C544B5 /* PokedeskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedeskTests.m; sourceTree = "<group>"; };
-		84A508A318E1F55D00C544B5 /* RacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RacesTableViewController.h; path = ../RacesTableViewController.h; sourceTree = "<group>"; };
-		84A508A418E1F55D00C544B5 /* RacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RacesTableViewController.m; path = ../RacesTableViewController.m; sourceTree = "<group>"; };
 		84A508A718E1F76900C544B5 /* 001.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 001.gif; sourceTree = "<group>"; };
 		84A508A818E1F76900C544B5 /* 002.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 002.gif; sourceTree = "<group>"; };
 		84A508A918E1F76900C544B5 /* 003.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 003.gif; sourceTree = "<group>"; };
@@ -639,8 +636,6 @@
 			children = (
 				84A5087D18E1F44900C544B5 /* Main.storyboard */,
 				84A508A618E1F76900C544B5 /* icon */,
-				84A508A318E1F55D00C544B5 /* RacesTableViewController.h */,
-				84A508A418E1F55D00C544B5 /* RacesTableViewController.m */,
 				84ED790218EEB38900CC375A /* PokemonCollectionViewCell.h */,
 				84ED790318EEB38900CC375A /* PokemonCollectionViewCell.m */,
 				84ED78FF18EEB21500CC375A /* RacesCollectionViewController.h */,
@@ -1306,7 +1301,6 @@
 				84A50AAA18E1FB1400C544B5 /* WebViewController.m in Sources */,
 				84A50AA718E1F76B00C544B5 /* Type.m in Sources */,
 				84ED790418EEB38900CC375A /* PokemonCollectionViewCell.m in Sources */,
-				84A508A518E1F55D00C544B5 /* RacesTableViewController.m in Sources */,
 				84ED790118EEB21500CC375A /* RacesCollectionViewController.m in Sources */,
 				84A50AA418E1F76B00C544B5 /* PokedeskModel.m in Sources */,
 				84A5087C18E1F44900C544B5 /* P4AppDelegate.m in Sources */,

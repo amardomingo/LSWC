@@ -111,8 +111,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-Ej-2Vq">
-                                            <rect key="frame" x="21" y="40" width="49" height="50"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-Ej-2Vq">
+                                            <rect key="frame" x="21" y="40" width="49" height="48"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpM-aM-rfX">
@@ -129,7 +129,9 @@
                                     <constraint firstAttribute="centerX" secondItem="fGh-Ej-2Vq" secondAttribute="centerX" id="4h8-BL-WoO"/>
                                     <constraint firstAttribute="centerX" secondItem="fpM-aM-rfX" secondAttribute="centerX" id="PIs-eV-Qop"/>
                                     <constraint firstAttribute="bottom" secondItem="fGh-Ej-2Vq" secondAttribute="bottom" constant="2" id="TH4-qf-Bii"/>
+                                    <constraint firstAttribute="trailing" secondItem="fGh-Ej-2Vq" secondAttribute="trailing" constant="20" id="XMq-d5-bKF"/>
                                     <constraint firstItem="fpM-aM-rfX" firstAttribute="top" secondItem="Rj5-XR-L9s" secondAttribute="top" constant="10" id="lZQ-g2-sX5"/>
+                                    <constraint firstItem="fGh-Ej-2Vq" firstAttribute="top" secondItem="fpM-aM-rfX" secondAttribute="bottom" constant="9" id="nNq-oE-vGt"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="pokemonImage" destination="fGh-Ej-2Vq" id="xvr-jt-F51"/>
@@ -151,54 +153,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epG-3f-yeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="730" y="195"/>
-        </scene>
-        <!--Races Table View Controller - Pokedesk-->
-        <scene sceneID="FN3-pP-WWJ">
-            <objects>
-                <tableViewController id="BmQ-UU-0UX" customClass="RacesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="laP-fe-s1o">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Race Cell" textLabel="Eo3-HD-Mf7" detailTextLabel="xZJ-HT-c22" style="IBUITableViewCellStyleSubtitle" id="jQX-r0-hji">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jQX-r0-hji" id="1eI-hz-s82">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eo3-HD-Mf7">
-                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xZJ-HT-c22">
-                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="BmQ-UU-0UX" id="WSr-je-cVO"/>
-                            <outlet property="delegate" destination="BmQ-UU-0UX" id="nEu-5W-j3Z"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Pokedesk" id="bL3-y0-2JL"/>
-                    <connections>
-                        <outlet property="navTitle" destination="bL3-y0-2JL" id="fPt-69-07Q"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bwk-nY-LIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-61" y="993"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QzX-A9-DQV">

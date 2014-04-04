@@ -22,7 +22,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog([self.type.races[0] name]);
 	// Do any additional setup after loading the view.
 }
 
