@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Web View Controller-->
+        <!--Web Wiki View Controller-->
         <scene sceneID="UJL-VP-l2u">
             <objects>
-                <viewController id="92s-aJ-756" customClass="WebViewController" sceneMemberID="viewController">
+                <viewController id="92s-aJ-756" customClass="WebWikiViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8S0-uk-agQ"/>
                         <viewControllerLayoutGuide type="bottom" id="K7G-V7-1hK"/>
@@ -31,6 +31,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w0X-lB-T3o">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="w1G-Vh-2dh">
+                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <segue destination="7Ju-1G-hao" kind="push" identifier="Show Google Info" id="5ph-EJ-dzO"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="Volver" id="jx3-Xv-sic">
                             <connections>
                                 <action selector="goBack" destination="Nqh-g4-Nfg" id="oum-aO-bmi"/>
@@ -38,12 +50,48 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="titleButton" destination="w1G-Vh-2dh" id="8H8-8k-6hR"/>
                         <outlet property="webView" destination="Nqh-g4-Nfg" id="f7m-Ak-sfn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOg-nA-kHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1107" y="190"/>
+        </scene>
+        <!--Web Google View Controller-->
+        <scene sceneID="6qO-qT-MRp">
+            <objects>
+                <viewController id="7Ju-1G-hao" customClass="WebGoogleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U8S-WC-LLC"/>
+                        <viewControllerLayoutGuide type="bottom" id="9rE-Q2-I68"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WbD-cv-kbj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-fY-wh9">
+                                <rect key="frame" x="0.0" y="63" width="320" height="505"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LeZ-Ha-K2A">
+                        <barButtonItem key="rightBarButtonItem" title="Volver" id="tcF-oo-Qsc">
+                            <connections>
+                                <action selector="goBack" destination="eDD-fY-wh9" id="Gno-30-iaA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="eDD-fY-wh9" id="O2H-Sr-9QG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbG-0S-eDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1469" y="190"/>
         </scene>
         <!--Types Table View Controller - Pokedesk-->
         <scene sceneID="rv4-QF-gjX">
@@ -53,8 +101,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.99607849120000003" green="0.99607849120000003" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Type Cell" textLabel="gBe-N8-sJr" style="IBUITableViewCellStyleDefault" id="G0v-zt-VBI">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Type Cell" textLabel="gBe-N8-sJr" style="IBUITableViewCellStyleDefault" id="G0v-zt-VBI">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G0v-zt-VBI" id="eYF-Cx-3wq">
@@ -65,11 +115,12 @@
                                             <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.98431378602981567" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="R0a-Gk-qkX" kind="push" identifier="Show Type" id="tam-6y-zkp"/>
                                 </connections>
@@ -136,7 +187,7 @@
                                 <connections>
                                     <outlet property="pokemonImage" destination="fGh-Ej-2Vq" id="xvr-jt-F51"/>
                                     <outlet property="pokemonLabel" destination="fpM-aM-rfX" id="Mqn-AF-s9D"/>
-                                    <segue destination="92s-aJ-756" kind="push" identifier="Show Web Info" id="FAk-nu-JQQ"/>
+                                    <segue destination="92s-aJ-756" kind="push" identifier="Show Wiki Info" id="FAk-nu-JQQ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

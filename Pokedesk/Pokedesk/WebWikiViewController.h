@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Race.h"
 
-@interface WebViewController : UIViewController
+@interface WebWikiViewController : UIViewController
 @property (nonatomic,strong) Race *race;
 @end

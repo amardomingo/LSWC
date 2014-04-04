@@ -275,10 +275,11 @@
 		84A50AA518E1F76B00C544B5 /* pokemons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84A509A418E1F76B00C544B5 /* pokemons.plist */; };
 		84A50AA618E1F76B00C544B5 /* Race.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A509A618E1F76B00C544B5 /* Race.m */; };
 		84A50AA718E1F76B00C544B5 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A509A818E1F76B00C544B5 /* Type.m */; };
-		84A50AAA18E1FB1400C544B5 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A50AA918E1FB1400C544B5 /* WebViewController.m */; };
+		84A50AAA18E1FB1400C544B5 /* WebWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A50AA918E1FB1400C544B5 /* WebWikiViewController.m */; };
 		84A50AAD18E2009A00C544B5 /* TypesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A50AAC18E2009A00C544B5 /* TypesTableViewController.m */; };
 		84ED790118EEB21500CC375A /* RacesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED790018EEB21500CC375A /* RacesCollectionViewController.m */; };
 		84ED790418EEB38900CC375A /* PokemonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED790318EEB38900CC375A /* PokemonCollectionViewCell.m */; };
+		84ED790A18EEC60D00CC375A /* WebGoogleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED790918EEC60D00CC375A /* WebGoogleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -567,14 +568,16 @@
 		84A509A618E1F76B00C544B5 /* Race.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Race.m; sourceTree = "<group>"; };
 		84A509A718E1F76B00C544B5 /* Type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type.h; sourceTree = "<group>"; };
 		84A509A818E1F76B00C544B5 /* Type.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type.m; sourceTree = "<group>"; };
-		84A50AA818E1FB1400C544B5 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		84A50AA918E1FB1400C544B5 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		84A50AA818E1FB1400C544B5 /* WebWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebWikiViewController.h; sourceTree = "<group>"; };
+		84A50AA918E1FB1400C544B5 /* WebWikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebWikiViewController.m; sourceTree = "<group>"; };
 		84A50AAB18E2009A00C544B5 /* TypesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypesTableViewController.h; sourceTree = "<group>"; };
 		84A50AAC18E2009A00C544B5 /* TypesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypesTableViewController.m; sourceTree = "<group>"; };
 		84ED78FF18EEB21500CC375A /* RacesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RacesCollectionViewController.h; sourceTree = "<group>"; };
 		84ED790018EEB21500CC375A /* RacesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RacesCollectionViewController.m; sourceTree = "<group>"; };
 		84ED790218EEB38900CC375A /* PokemonCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonCollectionViewCell.h; sourceTree = "<group>"; };
 		84ED790318EEB38900CC375A /* PokemonCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonCollectionViewCell.m; sourceTree = "<group>"; };
+		84ED790818EEC60D00CC375A /* WebGoogleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebGoogleViewController.h; sourceTree = "<group>"; };
+		84ED790918EEC60D00CC375A /* WebGoogleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebGoogleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -642,8 +645,10 @@
 				84ED790018EEB21500CC375A /* RacesCollectionViewController.m */,
 				84A50AAB18E2009A00C544B5 /* TypesTableViewController.h */,
 				84A50AAC18E2009A00C544B5 /* TypesTableViewController.m */,
-				84A50AA818E1FB1400C544B5 /* WebViewController.h */,
-				84A50AA918E1FB1400C544B5 /* WebViewController.m */,
+				84A50AA818E1FB1400C544B5 /* WebWikiViewController.h */,
+				84A50AA918E1FB1400C544B5 /* WebWikiViewController.m */,
+				84ED790818EEC60D00CC375A /* WebGoogleViewController.h */,
+				84ED790918EEC60D00CC375A /* WebGoogleViewController.m */,
 				84A509A218E1F76B00C544B5 /* PokedeskModel.h */,
 				84A509A318E1F76B00C544B5 /* PokedeskModel.m */,
 				84A509A418E1F76B00C544B5 /* pokemons.plist */,
@@ -1298,10 +1303,11 @@
 			files = (
 				84A50AA618E1F76B00C544B5 /* Race.m in Sources */,
 				84A50AAD18E2009A00C544B5 /* TypesTableViewController.m in Sources */,
-				84A50AAA18E1FB1400C544B5 /* WebViewController.m in Sources */,
+				84A50AAA18E1FB1400C544B5 /* WebWikiViewController.m in Sources */,
 				84A50AA718E1F76B00C544B5 /* Type.m in Sources */,
 				84ED790418EEB38900CC375A /* PokemonCollectionViewCell.m in Sources */,
 				84ED790118EEB21500CC375A /* RacesCollectionViewController.m in Sources */,
+				84ED790A18EEC60D00CC375A /* WebGoogleViewController.m in Sources */,
 				84A50AA418E1F76B00C544B5 /* PokedeskModel.m in Sources */,
 				84A5087C18E1F44900C544B5 /* P4AppDelegate.m in Sources */,
 				84A5087818E1F44900C544B5 /* main.m in Sources */,
