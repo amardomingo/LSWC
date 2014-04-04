@@ -71,7 +71,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BmQ-UU-0UX" kind="push" identifier="Show Type" id="hF4-VI-YhB"/>
+                                    <segue destination="R0a-Gk-qkX" kind="push" identifier="Show Type" id="tam-6y-zkp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -88,7 +88,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2L-ny-agf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="H4Q-YS-UqN" customClass="PokedeskModel"/>
             </objects>
-            <point key="canvasLocation" x="337" y="190"/>
+            <point key="canvasLocation" x="286" y="190"/>
+        </scene>
+        <!--Races Collection View Controller-->
+        <scene sceneID="XQk-wP-e5l">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="R0a-Gk-qkX" customClass="RacesCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="0Jt-7h-4Zm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zhW-ZL-Y6B">
+                            <size key="itemSize" width="90" height="90"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokemonCell" id="Rj5-XR-L9s" customClass="PokemonCollectionViewCell">
+                                <rect key="frame" x="0.0" y="64" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-Ej-2Vq">
+                                            <rect key="frame" x="21" y="40" width="49" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpM-aM-rfX">
+                                            <rect key="frame" x="24" y="10" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.9960784912109375" green="0.9960784912109375" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="fGh-Ej-2Vq" secondAttribute="centerX" id="4h8-BL-WoO"/>
+                                    <constraint firstAttribute="centerX" secondItem="fpM-aM-rfX" secondAttribute="centerX" id="PIs-eV-Qop"/>
+                                    <constraint firstAttribute="bottom" secondItem="fGh-Ej-2Vq" secondAttribute="bottom" constant="2" id="TH4-qf-Bii"/>
+                                    <constraint firstItem="fpM-aM-rfX" firstAttribute="top" secondItem="Rj5-XR-L9s" secondAttribute="top" constant="10" id="lZQ-g2-sX5"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="pokemonImage" destination="fGh-Ej-2Vq" id="xvr-jt-F51"/>
+                                    <outlet property="pokemonLabel" destination="fpM-aM-rfX" id="Mqn-AF-s9D"/>
+                                    <segue destination="92s-aJ-756" kind="push" identifier="Show Web Info" id="FAk-nu-JQQ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="R0a-Gk-qkX" id="4rH-Mz-0ak"/>
+                            <outlet property="delegate" destination="R0a-Gk-qkX" id="ctZ-jf-mWP"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="UFZ-ry-zRJ"/>
+                    <connections>
+                        <outlet property="navTitle" destination="UFZ-ry-zRJ" id="YsM-Jc-nOq"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="epG-3f-yeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="195"/>
         </scene>
         <!--Races Table View Controller - Pokedesk-->
         <scene sceneID="FN3-pP-WWJ">
@@ -100,7 +162,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Race Cell" textLabel="Eo3-HD-Mf7" detailTextLabel="xZJ-HT-c22" style="IBUITableViewCellStyleSubtitle" id="jQX-r0-hji">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jQX-r0-hji" id="1eI-hz-s82">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -122,9 +184,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="92s-aJ-756" kind="push" identifier="Show Web Info" id="0Y3-zg-Df8"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -139,7 +198,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwk-nY-LIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="190"/>
+            <point key="canvasLocation" x="-61" y="993"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QzX-A9-DQV">
@@ -157,7 +216,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8C-3J-0Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-61" y="190"/>
+            <point key="canvasLocation" x="-127" y="190"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

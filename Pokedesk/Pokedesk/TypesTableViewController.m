@@ -7,7 +7,7 @@
 //
 
 #import "TypesTableViewController.h"
-#import "RacesTableViewController.h"
+#import "RacesCollectionViewController.h"
 #import "PokedeskModel.h"
 #import "Type.h"
 #import "Race.h"
@@ -56,9 +56,9 @@
 {
     if ([segue.identifier isEqualToString:@"Show Type"]) {
         NSIndexPath *ip = [self.tableView indexPathForCell:sender];
-        RacesTableViewController *ttvc = segue.destinationViewController;
-        ttvc.type = self.pokedeskModel.types[ip.row];
-        ttvc.navTitle.title = [self.pokedeskModel.types[ip.row] name];
+        RacesCollectionViewController *rcvc = segue.destinationViewController;
+        rcvc.type = self.pokedeskModel.types[ip.row];
+        rcvc.navTitle.title = [self.pokedeskModel.types[ip.row] name];
     }
 }
 
