@@ -19,12 +19,6 @@
 
 @implementation TypesTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

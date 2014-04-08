@@ -14,7 +14,6 @@
 #import "Race.h"
 
 @interface RacesCollectionViewController ()
-@property (strong, nonatomic) PokedeskModel *pokedeskModel;
 @end
 
 @implementation RacesCollectionViewController
@@ -22,7 +21,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -35,7 +33,8 @@
     return [self.type.races count];
 }
 
-- (PokemonCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (PokemonCollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                       cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PokemonCell";
     PokemonCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier
