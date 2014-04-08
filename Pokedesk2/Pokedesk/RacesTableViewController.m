@@ -20,13 +20,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.filteredRacesArray = [NSArray array];
+    self.filteredRacesArray = [NSArray array]; //Array para busquedas
     
-    // Registramos como se crean las celdas de la
-    // tabla de resultados.
+    // Registra como se crean las celdas de la tabla de resultados.
     [self.searchDisplayController.searchResultsTableView registerClass: [UITableViewCell class]
                                                 forCellReuseIdentifier: @"PokemonCell"];
+    //Quitar separadores
     self.searchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //searchbar en la navigationBar
+    self.searchDisplayController.displaysSearchBarInNavigationBar = YES;
     
 }
 
@@ -37,7 +39,8 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
 {
     if(tableView == self.searchDisplayController.searchResultsTableView) {
         return [self.filteredRacesArray count];
@@ -46,7 +49,8 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PokemonCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -64,12 +68,15 @@
     return cell;
 }
 
+//metodo para actualizar el array de busquedas con los pokemon que contengan el string text
 - (void) updateFilteredRacesWithName: (NSString * ) text {
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@" , text];
     self.filteredRacesArray = [self.type.races filteredArrayUsingPredicate:pred];
 }
 
--(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
+//redibuja la tabla al escribir en la caja de busqueda
+-(BOOL) searchDisplayController:(UISearchDisplayController *)controller
+shouldReloadTableForSearchString:(NSString *)searchString{
     [self updateFilteredRacesWithName:searchString];
     return YES;
 }
@@ -91,6 +98,16 @@
             wvc.race = self.type.races[ip.row];
         }        
     }
+}
+
+//boton cancel:
+- (void) searchDisplayControllerWillBeginSearch:(UISearchDisplayController*)sdc
+{
+    self.searchDisplayController.searchBar.showsCancelButton = YES;
+}
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController*)sdc
+{
+    self.searchDisplayController.searchBar.showsCancelButton = NO;
 }
 
 @end
