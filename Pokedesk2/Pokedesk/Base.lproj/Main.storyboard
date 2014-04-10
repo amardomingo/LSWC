@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9EG-Uy-Jkw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4P-2C-O5b">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nqh-g4-Nfg">
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nqh-g4-Nfg">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -196,10 +196,30 @@
             </objects>
             <point key="canvasLocation" x="702" y="176"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="YrZ-Fo-AFh">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="M4P-2C-O5b" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="nif-Yh-UTR">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9EG-Uy-Jkw" kind="relationship" relationship="viewControllers" id="Yvl-BP-zW0"/>
+                        <segue destination="Bkk-og-6TZ" kind="relationship" relationship="viewControllers" id="Lan-un-Cg5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pIf-fE-biR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-726" y="448"/>
+        </scene>
+        <!--Navigation Controller - Pokedex-->
         <scene sceneID="QzX-A9-DQV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9EG-Uy-Jkw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pokedex" id="mQ0-iR-eLb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bvp-c2-jL1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -214,10 +234,138 @@
             </objects>
             <point key="canvasLocation" x="-123" y="176"/>
         </scene>
+        <!--My Pokedex Table View Controller-->
+        <scene sceneID="5q1-4T-dqe">
+            <objects>
+                <tableViewController id="4AI-zV-6eq" customClass="MyPokedexTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kbM-hv-owW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyPokemonCell" textLabel="nEs-EN-MJh" detailTextLabel="3fc-uX-oEB" style="IBUITableViewCellStyleValue1" id="O3i-Sm-r0A">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O3i-Sm-r0A" id="mHx-gr-bYw">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nEs-EN-MJh">
+                                            <rect key="frame" x="15" y="11" width="33" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3fc-uX-oEB">
+                                            <rect key="frame" x="241" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4AI-zV-6eq" id="eSB-SM-I1L"/>
+                            <outlet property="delegate" destination="4AI-zV-6eq" id="wtt-yn-JhJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Y8U-2i-Oa5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="861-w4-do9">
+                            <connections>
+                                <segue destination="KEK-KC-4yS" kind="push" identifier="Edit Pokemon" id="cXf-Xu-4Pp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pokedeskModel" destination="bV9-fP-KN1" id="hHN-3c-4nu"/>
+                        <segue destination="KEK-KC-4yS" kind="push" identifier="Edit Pokemon" id="fLf-9l-c40"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wjb-xF-hcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="bV9-fP-KN1" customClass="PokedeskModel"/>
+            </objects>
+            <point key="canvasLocation" x="409" y="867"/>
+        </scene>
+        <!--Edit Pokemon View Controller-->
+        <scene sceneID="fZw-d9-B3j">
+            <objects>
+                <viewController id="KEK-KC-4yS" customClass="EditPokemonViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m81-bB-gY7"/>
+                        <viewControllerLayoutGuide type="bottom" id="mf0-Js-Y2I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DuS-gd-eph" customClass="Ed">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Kp-GF-djW">
+                                <rect key="frame" x="20" y="352" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="Sqb-ad-C3B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4g8-pO-tik">
+                                <rect key="frame" x="0.0" y="182" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wGP-Iw-AWn">
+                                <rect key="frame" x="129" y="90" width="62" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="EOf-Np-5eN"/>
+                                    <constraint firstAttribute="height" constant="63" id="oEe-tQ-T11"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wGP-Iw-AWn" firstAttribute="centerX" secondItem="4g8-pO-tik" secondAttribute="centerX" id="DSM-bv-BAl"/>
+                            <constraint firstAttribute="centerX" secondItem="wGP-Iw-AWn" secondAttribute="centerX" id="Ii5-kD-abz"/>
+                            <constraint firstItem="mf0-Js-Y2I" firstAttribute="top" secondItem="7Kp-GF-djW" secondAttribute="bottom" constant="137" id="N9r-hp-pTw"/>
+                            <constraint firstItem="wGP-Iw-AWn" firstAttribute="top" secondItem="m81-bB-gY7" secondAttribute="bottom" constant="26" id="dpF-U7-c3u"/>
+                            <constraint firstItem="4g8-pO-tik" firstAttribute="top" secondItem="wGP-Iw-AWn" secondAttribute="bottom" constant="29" id="fzE-sK-j9r"/>
+                            <constraint firstItem="7Kp-GF-djW" firstAttribute="centerX" secondItem="4g8-pO-tik" secondAttribute="centerX" id="rUP-CW-mjd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DCt-SU-3uB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QEc-97-k35" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="867"/>
+        </scene>
+        <!--Navigation Controller - My Pokemons-->
+        <scene sceneID="roo-nJ-IZo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bkk-og-6TZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Pokemons" id="2um-Y6-C5Y"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nHM-Eu-xR5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4AI-zV-6eq" kind="relationship" relationship="rootViewController" id="9HN-fq-hdh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5zA-ru-c9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-117" y="867"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="cXf-Xu-4Pp"/>
+    </inferredMetricsTieBreakers>
 </document>

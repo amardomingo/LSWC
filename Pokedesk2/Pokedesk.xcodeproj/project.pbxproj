@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84011EC318F6FFFA00E10FBE /* MyPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011EC218F6FFFA00E10FBE /* MyPokedexTableViewController.m */; };
+		84011EC618F7040200E10FBE /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011EC518F7040200E10FBE /* Pokemon.m */; };
+		84011EC918F715C100E10FBE /* EditPokemonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011EC818F715C100E10FBE /* EditPokemonViewController.m */; };
 		8425A6A418F465A000972067 /* RacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425A6A318F465A000972067 /* RacesTableViewController.m */; };
 		84A5086C18E1F44900C544B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A5086B18E1F44900C544B5 /* Foundation.framework */; };
 		84A5086E18E1F44900C544B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A5086D18E1F44900C544B5 /* CoreGraphics.framework */; };
@@ -292,6 +295,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84011EC118F6FFFA00E10FBE /* MyPokedexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPokedexTableViewController.h; sourceTree = "<group>"; };
+		84011EC218F6FFFA00E10FBE /* MyPokedexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPokedexTableViewController.m; sourceTree = "<group>"; };
+		84011EC418F7040200E10FBE /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		84011EC518F7040200E10FBE /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		84011EC718F715C100E10FBE /* EditPokemonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPokemonViewController.h; sourceTree = "<group>"; };
+		84011EC818F715C100E10FBE /* EditPokemonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPokemonViewController.m; sourceTree = "<group>"; };
 		8425A6A218F465A000972067 /* RacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RacesTableViewController.h; sourceTree = "<group>"; };
 		8425A6A318F465A000972067 /* RacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RacesTableViewController.m; sourceTree = "<group>"; };
 		84A5086818E1F44900C544B5 /* Pokedesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -635,7 +644,10 @@
 			isa = PBXGroup;
 			children = (
 				84A5087D18E1F44900C544B5 /* Main.storyboard */,
-				84A508A618E1F76900C544B5 /* icon */,
+				84011EC718F715C100E10FBE /* EditPokemonViewController.h */,
+				84011EC818F715C100E10FBE /* EditPokemonViewController.m */,
+				84011EC218F6FFFA00E10FBE /* MyPokedexTableViewController.m */,
+				84011EC118F6FFFA00E10FBE /* MyPokedexTableViewController.h */,
 				84A50AAB18E2009A00C544B5 /* TypesTableViewController.h */,
 				84A50AAC18E2009A00C544B5 /* TypesTableViewController.m */,
 				8425A6A218F465A000972067 /* RacesTableViewController.h */,
@@ -650,10 +662,13 @@
 				84A509A618E1F76B00C544B5 /* Race.m */,
 				84A509A718E1F76B00C544B5 /* Type.h */,
 				84A509A818E1F76B00C544B5 /* Type.m */,
+				84011EC418F7040200E10FBE /* Pokemon.h */,
+				84011EC518F7040200E10FBE /* Pokemon.m */,
 				84A5087A18E1F44900C544B5 /* P4AppDelegate.h */,
 				84A5087B18E1F44900C544B5 /* P4AppDelegate.m */,
 				84A509A418E1F76B00C544B5 /* pokemons.plist */,
 				84A5088318E1F44900C544B5 /* Images.xcassets */,
+				84A508A618E1F76900C544B5 /* icon */,
 				84A5087218E1F44900C544B5 /* Supporting Files */,
 			);
 			path = Pokedesk;
@@ -1296,8 +1311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84011EC918F715C100E10FBE /* EditPokemonViewController.m in Sources */,
 				8425A6A418F465A000972067 /* RacesTableViewController.m in Sources */,
 				84A50AA618E1F76B00C544B5 /* Race.m in Sources */,
+				84011EC318F6FFFA00E10FBE /* MyPokedexTableViewController.m in Sources */,
 				84A50AAD18E2009A00C544B5 /* TypesTableViewController.m in Sources */,
 				84A50AAA18E1FB1400C544B5 /* WebWikiViewController.m in Sources */,
 				84A50AA718E1F76B00C544B5 /* Type.m in Sources */,
@@ -1305,6 +1322,7 @@
 				84A50AA418E1F76B00C544B5 /* PokedeskModel.m in Sources */,
 				84A5087C18E1F44900C544B5 /* P4AppDelegate.m in Sources */,
 				84A5087818E1F44900C544B5 /* main.m in Sources */,
+				84011EC618F7040200E10FBE /* Pokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
