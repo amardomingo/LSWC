@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F72E8682-DCC2-4D06-A361-16ED408489E6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Pokedesk</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>187E74C8-66BB-44C2-ABCB-4ABDD953E20B</key>
+		<string>ssh://github.com/amardomingo/LSWC.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Pokedesk/Pokedesk.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>187E74C8-66BB-44C2-ABCB-4ABDD953E20B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/amardomingo/LSWC.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>187E74C8-66BB-44C2-ABCB-4ABDD953E20B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>187E74C8-66BB-44C2-ABCB-4ABDD953E20B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LSWC</string>
+		</dict>
+	</array>
+</dict>
+</plist>
