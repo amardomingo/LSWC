@@ -276,7 +276,7 @@
                     <navigationItem key="navigationItem" id="Y8U-2i-Oa5">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="861-w4-do9">
                             <connections>
-                                <segue destination="KEK-KC-4yS" kind="push" identifier="Edit Pokemon" id="cXf-Xu-4Pp"/>
+                                <segue destination="KEK-KC-4yS" kind="push" identifier="Create Pokemon" id="cXf-Xu-4Pp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -298,45 +298,65 @@
                         <viewControllerLayoutGuide type="top" id="m81-bB-gY7"/>
                         <viewControllerLayoutGuide type="bottom" id="mf0-Js-Y2I"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DuS-gd-eph" customClass="Ed">
+                    <view key="view" contentMode="scaleToFill" id="DuS-gd-eph">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Kp-GF-djW">
-                                <rect key="frame" x="20" y="352" width="280" height="30"/>
+                                <rect key="frame" x="35" y="457" width="250" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="Sqb-ad-C3B"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4g8-pO-tik">
-                                <rect key="frame" x="0.0" y="182" width="320" height="162"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4g8-pO-tik">
+                                <rect key="frame" x="0.0" y="188" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="bCD-mG-012"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="KEK-KC-4yS" id="Jzf-oZ-tC0"/>
+                                    <outlet property="delegate" destination="KEK-KC-4yS" id="iCO-rY-Wdx"/>
+                                </connections>
                             </pickerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wGP-Iw-AWn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wGP-Iw-AWn">
                                 <rect key="frame" x="129" y="90" width="62" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="62" id="EOf-Np-5eN"/>
-                                    <constraint firstAttribute="height" constant="63" id="oEe-tQ-T11"/>
+                                    <constraint firstAttribute="height" constant="63" id="mcr-Gl-uO9"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wGP-Iw-AWn" firstAttribute="centerX" secondItem="4g8-pO-tik" secondAttribute="centerX" id="DSM-bv-BAl"/>
-                            <constraint firstAttribute="centerX" secondItem="wGP-Iw-AWn" secondAttribute="centerX" id="Ii5-kD-abz"/>
-                            <constraint firstItem="mf0-Js-Y2I" firstAttribute="top" secondItem="7Kp-GF-djW" secondAttribute="bottom" constant="137" id="N9r-hp-pTw"/>
-                            <constraint firstItem="wGP-Iw-AWn" firstAttribute="top" secondItem="m81-bB-gY7" secondAttribute="bottom" constant="26" id="dpF-U7-c3u"/>
-                            <constraint firstItem="4g8-pO-tik" firstAttribute="top" secondItem="wGP-Iw-AWn" secondAttribute="bottom" constant="29" id="fzE-sK-j9r"/>
-                            <constraint firstItem="7Kp-GF-djW" firstAttribute="centerX" secondItem="4g8-pO-tik" secondAttribute="centerX" id="rUP-CW-mjd"/>
+                            <constraint firstItem="mf0-Js-Y2I" firstAttribute="top" secondItem="7Kp-GF-djW" secondAttribute="bottom" constant="32" id="4qV-xX-Dzv"/>
+                            <constraint firstAttribute="trailing" secondItem="7Kp-GF-djW" secondAttribute="trailing" constant="35" id="Apo-37-BdU"/>
+                            <constraint firstItem="4g8-pO-tik" firstAttribute="leading" secondItem="DuS-gd-eph" secondAttribute="leading" id="CYG-FM-ZKW"/>
+                            <constraint firstAttribute="trailing" secondItem="wGP-Iw-AWn" secondAttribute="trailing" constant="129" id="Dba-fe-Zo2"/>
+                            <constraint firstItem="7Kp-GF-djW" firstAttribute="leading" secondItem="DuS-gd-eph" secondAttribute="leading" constant="35" id="Frm-pz-txj"/>
+                            <constraint firstItem="wGP-Iw-AWn" firstAttribute="top" secondItem="m81-bB-gY7" secondAttribute="bottom" constant="26" id="OND-qp-Ite"/>
+                            <constraint firstItem="4g8-pO-tik" firstAttribute="top" secondItem="wGP-Iw-AWn" secondAttribute="bottom" constant="35" id="lPo-qJ-SKi"/>
+                            <constraint firstItem="wGP-Iw-AWn" firstAttribute="leading" secondItem="DuS-gd-eph" secondAttribute="leading" constant="129" id="tOX-HD-TfY"/>
+                            <constraint firstAttribute="trailing" secondItem="4g8-pO-tik" secondAttribute="trailing" id="wxz-rv-JKC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DCt-SU-3uB"/>
+                    <navigationItem key="navigationItem" id="DCt-SU-3uB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="pVI-WK-dhx">
+                            <connections>
+                                <segue destination="VhK-E0-s71" kind="unwind" identifier="Save Pokemon" unwindAction="addPokemon:" id="3Lf-eL-1MR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="7Kp-GF-djW" id="dQM-5k-hJX"/>
+                        <outlet property="photo" destination="wGP-Iw-AWn" id="mjM-6I-Adq"/>
+                        <outlet property="picker" destination="4g8-pO-tik" id="3k7-fc-1Ot"/>
+                        <outlet property="pokedeskModel" destination="vvM-jV-JBW" id="2HS-se-PBv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEc-97-k35" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VhK-E0-s71" userLabel="Exit" sceneMemberID="exit"/>
+                <customObject id="vvM-jV-JBW" customClass="PokedeskModel"/>
             </objects>
             <point key="canvasLocation" x="806" y="867"/>
         </scene>

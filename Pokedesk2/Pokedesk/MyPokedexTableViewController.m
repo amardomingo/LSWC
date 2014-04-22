@@ -9,6 +9,8 @@
 #import "MyPokedexTableViewController.h"
 #import "Pokemon.h"
 #import "PokedeskModel.h"
+#import "EditPokemonViewController.h"
+
 
 @interface MyPokedexTableViewController ()
 @property (strong, nonatomic) NSMutableArray * myPokemons;
@@ -26,7 +28,7 @@
     //Para pruebas, contenido inicial:
     [self.myPokemons addObjectsFromArray:
             @[
-              [[Pokemon alloc] initWithName:@"Pepe" race: self.pokedeskModel.races[5]],
+              [[Pokemon alloc] initWithName:@"Pepe" race: self.pokedeskModel.races[6]],
               [[Pokemon alloc] initWithName:@"Juan" race: self.pokedeskModel.races[54]]
             ]];
     
@@ -114,16 +116,28 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    EditPokemonViewController *epvc = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"Edit Pokemon"]) {
+        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+        
+        epvc.race = ((Pokemon *)self.myPokemons[ip.row]).race;
+        epvc.nombre =((Pokemon *)self.myPokemons[ip.row]).name;
+        epvc.row = ip.row;
+    } else if ([segue.identifier isEqualToString:@"Create Pokemon"]) {
+        epvc.row = -1;
+    }
 }
 
- */
+-(IBAction)addPokemon:(UIStoryboardSegue *)unwindSegue{
+    EditPokemonViewController *epvc = unwindSegue.sourceViewController;
+    if (epvc.row == -1) {
+    [self.myPokemons addObject:[[Pokemon alloc] initWithName:epvc.nombre race: epvc.race]];
+    } else {
+        self.myPokemons[epvc.row] =[[Pokemon alloc] initWithName:epvc.nombre race: epvc.race];
+    }
+    [self.tableView reloadData];
+}
 
 @end
