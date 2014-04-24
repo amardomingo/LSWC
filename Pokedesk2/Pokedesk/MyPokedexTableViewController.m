@@ -29,7 +29,9 @@
     [self.myPokemons addObjectsFromArray:
             @[
               [[Pokemon alloc] initWithName:@"Pepe" race: self.pokedeskModel.races[150]],
-              [[Pokemon alloc] initWithName:@"Juan" race: self.pokedeskModel.races[54]]
+              [[Pokemon alloc] initWithName:@"Joselu" race: self.pokedeskModel.races[53]],
+              [[Pokemon alloc] initWithName:@"Mariana" race: self.pokedeskModel.races[3]],
+              [[Pokemon alloc] initWithName:@"Anita" race: self.pokedeskModel.races[24]]
             ]];
     
      self.navigationItem.rightBarButtonItem = self.editButtonItem;
