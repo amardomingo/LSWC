@@ -23,21 +23,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSInteger row;
     if(self.nombre != nil && self.race != nil && self.row != -1){
-        NSInteger row = [self searchPokemon:self.race];
+        row = [self searchPokemon:self.race];
         [self.picker selectRow:row inComponent:0 animated:YES];
         self.nameTextField.text = self.nombre;
     } else {
-        NSInteger row = 0;
+        row = 0;
         [self.picker selectRow:row inComponent:0 animated:YES];
     }
+    [self updatePokemon:row];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
 }
 
-	// returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return [self.pokedeskModel.races count];
 }
@@ -47,7 +48,6 @@
     label.textAlignment = NSTextAlignmentCenter;
     
     label.text = ((Race *)[self.pokedeskModel.races objectAtIndex:row]).name;
-    [self updatePokemon:row];
     return label;
 }
 
@@ -79,6 +79,7 @@
 {
     if ([segue.identifier isEqualToString:@"Save Pokemon"]) {
         self.nombre = self.nameTextField.text;
+        if([self.nameTextField.text isEqualToString:@""]) self.nombre = self.race.name;
     }
 }
 
