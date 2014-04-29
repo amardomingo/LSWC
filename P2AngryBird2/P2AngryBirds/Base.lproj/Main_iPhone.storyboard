@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="P2ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="redraw" id="BgY-pl-DH1" customClass="P2TrayectoryView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Steve_PMC" highlightedImage="SteveExploded.png" id="f4V-ZO-ZIn">
+                                        <rect key="frame" x="273" y="436" width="47" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CannnonBase.png" id="Jyz-bk-S4g">
+                                        <rect key="frame" x="-31" y="425" width="96" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CreeperPeq.png" id="aWY-To-bVP">
+                                        <rect key="frame" x="-41" y="448" width="89" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zZB-vd-h0y" appends="YES" id="1Tj-xN-mYC"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiro Parabólico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9yd-HW-yg9">
+                                <rect key="frame" x="0.0" y="20" width="320" height="33"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velocidad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5v0-3r-aJP">
+                                <rect key="frame" x="20" y="70" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distancia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hSy-Nv-wBk">
+                                <rect key="frame" x="20" y="140" width="71" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="250" id="eQQ-PJ-7M5">
+                                <rect key="frame" x="101" y="134" width="201" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeDistance:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Zid-WH-Uba"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="65" minValue="0.0" maxValue="260" id="8Qg-iS-vAW">
+                                <rect key="frame" x="101" y="169" width="201" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeZoom:" destination="vXZ-lx-hvc" eventType="valueChanged" id="elS-Bd-FFg"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zoom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hOr-Gs-AJJ">
+                                <rect key="frame" x="20" y="175" width="71" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="5" maxValue="70" id="HyW-7P-C6G">
+                                <rect key="frame" x="101" y="64" width="201" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeSpeed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="nrP-HC-uUj"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jzm-vr-iGP" appends="YES" id="g0X-ef-9NF"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="baseCannon" destination="Jyz-bk-S4g" id="dh4-gY-TLz"/>
+                        <outlet property="creeperCannon" destination="aWY-To-bVP" id="Uvz-ki-8GW"/>
+                        <outlet property="distanceSlider" destination="eQQ-PJ-7M5" id="NPz-3j-sg6"/>
+                        <outlet property="model" destination="TAm-XN-9Z6" id="Aue-Yv-tZL"/>
+                        <outlet property="pinchGestureRecognizer" destination="jzm-vr-iGP" id="BVu-8z-2oe"/>
+                        <outlet property="rotationGestureRecognizer" destination="zZB-vd-h0y" id="9Lb-lN-VJC"/>
+                        <outlet property="speedSlider" destination="HyW-7P-C6G" id="vuL-Ma-031"/>
+                        <outlet property="targetImage" destination="f4V-ZO-ZIn" id="thu-kR-pgs"/>
+                        <outlet property="trajView" destination="BgY-pl-DH1" id="sSd-c1-Mrj"/>
+                        <outlet property="zoomSlider" destination="8Qg-iS-vAW" id="6al-Ws-7uE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="zZB-vd-h0y">
+                    <connections>
+                        <action selector="processRotationGesture:" destination="vXZ-lx-hvc" id="gIs-Gv-Ewl"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <pinchGestureRecognizer id="jzm-vr-iGP">
+                    <connections>
+                        <action selector="processPinchGesture:" destination="vXZ-lx-hvc" id="5L9-O7-t9q"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <customObject id="TAm-XN-9Z6" customClass="P2ParabolicModel"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CannnonBase.png" width="1000" height="600"/>
+        <image name="CreeperPeq.png" width="90" height="40"/>
+        <image name="SteveExploded.png" width="300" height="300"/>
+        <image name="Steve_PMC" width="240" height="290"/>
+    </resources>
+    <color key="tintColor" red="0.70756442346364223" green="1" blue="0.30198198990013525" alpha="1" colorSpace="calibratedRGB"/>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
