@@ -33,9 +33,14 @@
 }
 
 - (void) setTargetDistance:(CGFloat)targetDistance{
-    if (targetDistance < self.maxTargetDistance  &&  targetDistance > self.minTargetDistance){
+    if (targetDistance < self.maxTargetDistance  &&  targetDistance > 0){
         _targetDistance = targetDistance;
     }
 }
 
+-(void) setZoom:(CGFloat)zoom{
+    if (zoom < 250){
+        _zoom = zoom;
+    }
+}
 @end

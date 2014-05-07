@@ -14,7 +14,6 @@
 @property (nonatomic) CGFloat targetDistance;
 @property (nonatomic) CGFloat zoom;
 @property (nonatomic) CGFloat maxTargetDistance;
-@property (nonatomic) CGFloat minTargetDistance;
 
 - (CGFloat) heightAt: (CGFloat) time;
 - (CGFloat) distanceAt: (CGFloat) time;

@@ -11,6 +11,7 @@
 @interface P2ViewController () <TrajectoryDatasource>
 @property (strong, nonatomic) IBOutlet UIRotationGestureRecognizer *rotationGestureRecognizer;
 @property (strong, nonatomic) IBOutlet UIPinchGestureRecognizer *pinchGestureRecognizer;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeGestureRecognizer;
 @end
 
 
@@ -59,9 +60,12 @@
     [sender setTranslation: CGPointZero inView: sender.view];
     [self updateDistance];
 }
-
-- (IBAction)changeZoom:(UISlider *)sender {
-    self.model.zoom = sender.value;
+- (IBAction)process1TapGesture:(UITapGestureRecognizer *)sender {
+    self.model.zoom += 20;
+    [self.trajView setNeedsDisplay];
+}
+- (IBAction)process2TapGesture:(UITapGestureRecognizer *)sender {
+    self.model.zoom -= 20;
     [self.trajView setNeedsDisplay];
 }
 
@@ -75,6 +79,8 @@
     [super viewDidLoad];
     
     self.trajView.datasource=self;
+    
+    self.swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp | UISwipeGestureRecognizerDirectionUp;
     /*
     CGFloat anchorX = -0.01;//-self.creeperCannon.bounds.size.width/2;
     CGFloat anchorY = -00,00;//-self.creeperCannon.bounds.size.height/2;
@@ -82,7 +88,7 @@
 */
     //[self processRotationGesture: self.rotationGestureRecognizer];
     
-    [self changeZoom:self.zoomSlider];
+    self.model.zoom = 100;
     
     //printf("%f, %f ", self.creeperCannon.frame.origin.x, self.creeperCannon.frame.origin.y );
 
@@ -129,12 +135,8 @@
     [self.targetImage setNeedsDisplay];
 }
 
--(void) updateDistanceBounds{
-    
-    self.model.minTargetDistance = 0;//self.trajView.bounds.size.width/2;
+-(void) updateDistanceBounds{    
     self.model.maxTargetDistance = self.trajView.bounds.size.width - self.targetImage.bounds.size.width/2;
-    NSLog(@"Max=%f",self.model.maxTargetDistance);
-    NSLog(@"Min=%f",self.model.minTargetDistance);
 }
 
 
