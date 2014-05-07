@@ -48,6 +48,7 @@
 - (IBAction)processRotationGesture:(UIRotationGestureRecognizer *)sender {
     self.model.initialAngle -= M_PI_2 *sender.rotation;
     [self checkHit];
+    [self rotateCannon:self.model.initialAngle];
     [self.creeperCannon setNeedsDisplay];
     [self.trajView setNeedsDisplay];
     sender.rotation = 0;
@@ -81,17 +82,10 @@
     self.trajView.datasource=self;
     
     self.swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp | UISwipeGestureRecognizerDirectionUp;
-    /*
-    CGFloat anchorX = -0.01;//-self.creeperCannon.bounds.size.width/2;
-    CGFloat anchorY = -00,00;//-self.creeperCannon.bounds.size.height/2;
-    self.creeperCannon.layer.anchorPoint = CGPointMake(anchorX, anchorY);
-*/
-    //[self processRotationGesture: self.rotationGestureRecognizer];
     
     self.model.zoom = 100;
     
-    //printf("%f, %f ", self.creeperCannon.frame.origin.x, self.creeperCannon.frame.origin.y );
-
+    
     self.model.initialAngle = M_PI_4;
     self.model.initialSpeed = 40;
     [self updateDistanceBounds];
@@ -103,7 +97,7 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-   // printf("%f, %f ", self.creeperCannon.frame.origin.x, self.creeperCannon.frame.origin.y );
+    
     [self updateDistanceBounds];
     self.model.targetDistance = self.model.maxTargetDistance - self.targetImage.bounds.size.width;
     [self updateDistance];
