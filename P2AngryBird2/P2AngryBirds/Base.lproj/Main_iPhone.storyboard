@@ -19,6 +19,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Steve_PMC" highlightedImage="SteveExploded.png" id="f4V-ZO-ZIn">
                                         <rect key="frame" x="273" y="436" width="47" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CannnonBase.png" id="Jyz-bk-S4g">
                                         <rect key="frame" x="-31" y="425" width="96" height="67"/>
@@ -28,6 +29,19 @@
                                         <rect key="frame" x="-41" y="448" width="89" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zoom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hOr-Gs-AJJ">
+                                        <rect key="frame" x="20" y="91" width="71" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="65" minValue="0.0" maxValue="260" id="8Qg-iS-vAW">
+                                        <rect key="frame" x="97" y="85" width="201" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="changeZoom:" destination="vXZ-lx-hvc" eventType="valueChanged" id="elS-Bd-FFg"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="zZB-vd-h0y" appends="YES" id="1Tj-xN-mYC"/>
@@ -39,59 +53,19 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velocidad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5v0-3r-aJP">
-                                <rect key="frame" x="20" y="70" width="75" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distancia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hSy-Nv-wBk">
-                                <rect key="frame" x="20" y="140" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="250" id="eQQ-PJ-7M5">
-                                <rect key="frame" x="101" y="134" width="201" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="changeDistance:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Zid-WH-Uba"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="65" minValue="0.0" maxValue="260" id="8Qg-iS-vAW">
-                                <rect key="frame" x="101" y="169" width="201" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="changeZoom:" destination="vXZ-lx-hvc" eventType="valueChanged" id="elS-Bd-FFg"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zoom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hOr-Gs-AJJ">
-                                <rect key="frame" x="20" y="175" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="5" maxValue="70" id="HyW-7P-C6G">
-                                <rect key="frame" x="101" y="64" width="201" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="changeSpeed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="nrP-HC-uUj"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="jzm-vr-iGP" appends="YES" id="g0X-ef-9NF"/>
+                            <outletCollection property="gestureRecognizers" destination="h9V-GN-yoo" appends="YES" id="0Nn-Qs-WEq"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="baseCannon" destination="Jyz-bk-S4g" id="dh4-gY-TLz"/>
                         <outlet property="creeperCannon" destination="aWY-To-bVP" id="Uvz-ki-8GW"/>
-                        <outlet property="distanceSlider" destination="eQQ-PJ-7M5" id="NPz-3j-sg6"/>
                         <outlet property="model" destination="TAm-XN-9Z6" id="Aue-Yv-tZL"/>
                         <outlet property="pinchGestureRecognizer" destination="jzm-vr-iGP" id="BVu-8z-2oe"/>
                         <outlet property="rotationGestureRecognizer" destination="zZB-vd-h0y" id="9Lb-lN-VJC"/>
-                        <outlet property="speedSlider" destination="HyW-7P-C6G" id="vuL-Ma-031"/>
                         <outlet property="targetImage" destination="f4V-ZO-ZIn" id="thu-kR-pgs"/>
                         <outlet property="trajView" destination="BgY-pl-DH1" id="sSd-c1-Mrj"/>
                         <outlet property="zoomSlider" destination="8Qg-iS-vAW" id="6al-Ws-7uE"/>
@@ -109,6 +83,11 @@
                     </connections>
                 </pinchGestureRecognizer>
                 <customObject id="TAm-XN-9Z6" customClass="P2ParabolicModel"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="h9V-GN-yoo">
+                    <connections>
+                        <action selector="processPanGesture:" destination="vXZ-lx-hvc" id="6Rk-N7-av2"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>

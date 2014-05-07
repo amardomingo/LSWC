@@ -35,36 +35,31 @@
     [self.targetImage setNeedsDisplay];
 }
 
-- (IBAction)changeSpeed:(UISlider *)sender {
-    self.model.initialSpeed = sender.value;
-    [self checkHit];
-    [self.trajView setNeedsDisplay];
-}
 - (IBAction)processPinchGesture:(UIPinchGestureRecognizer *)sender {
-    NSLog(@"Pinch");
-    self.model.initialSpeed = sender.scale;
+    
+    self.model.initialSpeed = self.model.initialSpeed*sender.scale;
     [self checkHit];
     [self.trajView setNeedsDisplay];
+    sender.scale = 1;
 }
 
 
 - (IBAction)processRotationGesture:(UIRotationGestureRecognizer *)sender {
-    NSLog(@"Rotation");
     self.model.initialAngle -= M_PI_2 *sender.rotation;
-    //[self rotateCannon: M_PI_2 *sender.rotation];
     [self checkHit];
     [self.creeperCannon setNeedsDisplay];
     [self.trajView setNeedsDisplay];
     sender.rotation = 0;
 }
 
-- (IBAction)changeDistance:(UISlider *)sender {
-    self.model.targetDistance = sender.value;
-    CGFloat h = self.trajView.bounds.size.height - self.targetImage.bounds.size.height/2;
-    [self.targetImage setCenter:CGPointMake(self.model.targetDistance, h)];
-    [self checkHit];
-    [self.trajView setNeedsDisplay];
+- (IBAction)processPanGesture:(UIPanGestureRecognizer *)sender {
+    CGPoint p = [sender translationInView:self.view];
+    [self updateDistanceBounds];
+    self.model.targetDistance += p.x;
+    [sender setTranslation: CGPointZero inView: sender.view];
+    [self updateDistance];
 }
+
 - (IBAction)changeZoom:(UISlider *)sender {
     self.model.zoom = sender.value;
     [self.trajView setNeedsDisplay];
@@ -73,7 +68,7 @@
 - (void) loadView{
     [super loadView];
     self.view.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-    [self updateDistanceSize];
+    [self updateDistance];
 }
 - (void)viewDidLoad
 {
@@ -86,28 +81,28 @@
     self.creeperCannon.layer.anchorPoint = CGPointMake(anchorX, anchorY);
 */
     //[self processRotationGesture: self.rotationGestureRecognizer];
-    self.model.initialAngle = M_PI_4;
-    self.model.initialSpeed = 40;
-    [self changeDistance:self.distanceSlider];
+    
     [self changeZoom:self.zoomSlider];
     
     //printf("%f, %f ", self.creeperCannon.frame.origin.x, self.creeperCannon.frame.origin.y );
 
-
+    self.model.initialAngle = M_PI_4;
+    self.model.initialSpeed = 40;
+    [self updateDistanceBounds];
+    self.model.targetDistance = 100;
+    [self updateDistance];
     
 }
+
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
    // printf("%f, %f ", self.creeperCannon.frame.origin.x, self.creeperCannon.frame.origin.y );
+    [self updateDistanceBounds];
+    self.model.targetDistance = self.model.maxTargetDistance - self.targetImage.bounds.size.width;
+    [self updateDistance];
+}
 
-    [self updateDistanceSize];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 -(CGFloat) trajViewStartTime:(P2TrayectoryView *)tv{
     return 0.0;
@@ -126,15 +121,20 @@
     return self.model.zoom;
 }
 
--(void) updateDistanceSize{
-    CGFloat minSlider = self.trajView.bounds.size.width/2;
-    [self.distanceSlider setMinimumValue: minSlider];
-    CGFloat maxSlider = self.trajView.bounds.size.width - self.targetImage.bounds.size.width/2;
-    [self.distanceSlider setMaximumValue: maxSlider];
-    [self.distanceSlider setValue: minSlider];
-    [self changeDistance:self.distanceSlider];
+-(void) updateDistance{
+    CGFloat h = self.trajView.bounds.size.height - self.targetImage.bounds.size.height/2;
+    [self.targetImage setCenter:CGPointMake(self.model.targetDistance, h)];
+    [self checkHit];
     [self.trajView setNeedsDisplay];
     [self.targetImage setNeedsDisplay];
+}
+
+-(void) updateDistanceBounds{
+    
+    self.model.minTargetDistance = 0;//self.trajView.bounds.size.width/2;
+    self.model.maxTargetDistance = self.trajView.bounds.size.width - self.targetImage.bounds.size.width/2;
+    NSLog(@"Max=%f",self.model.maxTargetDistance);
+    NSLog(@"Min=%f",self.model.minTargetDistance);
 }
 
 

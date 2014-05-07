@@ -32,4 +32,10 @@
     }
 }
 
+- (void) setTargetDistance:(CGFloat)targetDistance{
+    if (targetDistance < self.maxTargetDistance  &&  targetDistance > self.minTargetDistance){
+        _targetDistance = targetDistance;
+    }
+}
+
 @end
