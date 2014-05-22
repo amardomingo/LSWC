@@ -87,11 +87,17 @@
     CityCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.cityLabel.text = self.cities[indexPath.row];
     
+    MKCoordinateRegion reg;
+    reg.center.latitude = 0;
+    reg.center.longitude = 0;
+    reg.span.latitudeDelta = 0.5;
+    reg.span.longitudeDelta = 0.5;
+    [cell.map setRegion:reg animated:NO];
+
     [self incrNetActivity];
     
     dispatch_queue_t queue = dispatch_queue_create("download queue", NULL);
     dispatch_async(queue, ^{
-    
         // Construimos la URL añadiendo la query
         NSString * s = [NSString stringWithFormat:@"%@?q=%@&units=metric&lang=sp",OPE_W_URL,self.cities[indexPath.row]];
         
@@ -120,36 +126,7 @@
                 /*for (NSString *key in [dic allKeys]) {
                     NSLog(@"KEY = %@ -> %@",key, dic[key]);
                 }*/
-                
-                NSNumber * ntemp = dic[@"main"][@"temp"];
-                cell.tempLabel.text = [NSString stringWithFormat:@"%d ºC",ntemp.intValue];
-                
-                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                [dateFormatter setDateFormat:@"HH:mm"];
-                
-                NSNumber * ndate = dic[@"sys"][@"sunrise"];
-                NSDate * date = [[NSDate alloc] initWithTimeIntervalSince1970:ndate.doubleValue];
-                
-                cell.sunriseLabel.text = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:date]];
-                
-                ndate = dic[@"sys"][@"sunset"];
-                date = [[NSDate alloc] initWithTimeIntervalSince1970:ndate.doubleValue];
-                
-                cell.sunsetLabel.text = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:date]];
-                
-                cell.weatherLabel.text = dic[@"weather"][0][@"description"];
-                
-                NSNumber * nlatitude = dic[@"coord"][@"lat"];
-                NSNumber * nlongitude =  dic[@"coord"][@"lon"];
-                
-                MKCoordinateRegion reg;
-                reg.center.latitude = nlatitude.floatValue;
-                reg.center.longitude = nlongitude.floatValue;
-                reg.span.latitudeDelta = 0.5;
-                reg.span.longitudeDelta = 0.5;
-                [cell.map setRegion:reg animated:NO];
-                cell.map.mapType = MKMapTypeHybrid;
-                cell.map.userInteractionEnabled = NO;
+                [self editCellWithIndexPath:indexPath usingDic:dic];
             }
             [self decrNetActivity];
         });
@@ -158,7 +135,38 @@
     return cell;
 }
 
-
+- (void) editCellWithIndexPath:(NSIndexPath *)indexPath usingDic: (NSDictionary *) dic{
+    CityCell * cell = (CityCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    NSNumber * ntemp = dic[@"main"][@"temp"];
+    cell.tempLabel.text = [NSString stringWithFormat:@"%d ºC",ntemp.intValue];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    
+    NSNumber * ndate = dic[@"sys"][@"sunrise"];
+    NSDate * date = [[NSDate alloc] initWithTimeIntervalSince1970:ndate.doubleValue];
+    
+    cell.sunriseLabel.text = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:date]];
+    
+    ndate = dic[@"sys"][@"sunset"];
+    date = [[NSDate alloc] initWithTimeIntervalSince1970:ndate.doubleValue];
+    
+    cell.sunsetLabel.text = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:date]];
+    
+    cell.weatherLabel.text = dic[@"weather"][0][@"description"];
+    
+    NSNumber * nlatitude = dic[@"coord"][@"lat"];
+    NSNumber * nlongitude =  dic[@"coord"][@"lon"];
+    
+    MKCoordinateRegion reg;
+    reg.center.latitude = nlatitude.floatValue;
+    reg.center.longitude = nlongitude.floatValue;
+    reg.span.latitudeDelta = 0.5;
+    reg.span.longitudeDelta = 0.5;
+    [cell.map setRegion:reg animated:NO];
+    cell.map.mapType = MKMapTypeHybrid;
+    cell.map.userInteractionEnabled = NO;
+}
 
 
 - (void) loadCities {

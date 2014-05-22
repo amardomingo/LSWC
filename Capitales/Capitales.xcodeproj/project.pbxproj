@@ -475,6 +475,7 @@
 				84FCD0FE192BC95A00F6CB73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84FCD0FF192BC95A00F6CB73 /* Build configuration list for PBXNativeTarget "CapitalesTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +484,7 @@
 				84FCD101192BC95A00F6CB73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
