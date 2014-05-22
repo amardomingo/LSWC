@@ -13,6 +13,7 @@
 
 @interface CitiesTableViewController ()
 @property (strong) NSMutableArray * cities;
+@property (assign)  NSInteger netActivityCredit;
 @end
 
 @implementation CitiesTableViewController
@@ -44,6 +45,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  Activa el indicador de actividad de red.
+ *
+ *  Aumenta en 1 en contador de llamadas realizadas.
+ */
+- (void) incrNetActivity
+{
+    self.netActivityCredit += 1;
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
+/**
+ *  Desactiva el indicador de actividad de red.
+ *
+ *  Decrementa en 1 en contador de llamadas realizadas.
+ *  El indicador solo se desactiva cuando el contador llega a cero.
+ */
+- (void) decrNetActivity
+{
+    self.netActivityCredit -= 1;
+    if (self.netActivityCredit < 1)
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:FALSE];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -62,68 +87,79 @@
     CityCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.cityLabel.text = self.cities[indexPath.row];
     
-    // Construimos la URL añadiendo la query
-    NSString * s = [NSString stringWithFormat:@"%@?q=%@&units=metric&lang=sp",OPE_W_URL,self.cities[indexPath.row]];
+    [self incrNetActivity];
     
-    s = [s stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    dispatch_queue_t queue = dispatch_queue_create("download queue", NULL);
+    dispatch_async(queue, ^{
     
-    NSURL *url = [NSURL URLWithString:s];
-    
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    
-    if (! data) {
-        NSLog(@"Error: no se han descargado datos.");
-        return nil;
-    }
-    
-    NSDictionary * dic;
-    NSError * err;
-    dic = [NSJSONSerialization JSONObjectWithData:data
-                                          options:NSJSONReadingMutableContainers
-                                            error:&err];
-    if (!dic) {
-        NSLog(@"Error parsing JSON = %@",[err localizedDescription]);
-        return nil;
-    }
-    
-    
-    // Log main keys
-    for (NSString *key in [dic allKeys]) {
-        NSLog(@"KEY = %@ -> %@",key, dic[key]);
-    }
-    
-    NSNumber * ntemp = dic[@"main"][@"temp"];
-    cell.tempLabel.text = [NSString stringWithFormat:@"%d ºC",ntemp.intValue];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm"];
-    
-    NSNumber * ndate = dic[@"sys"][@"sunrise"];
-    NSDate * date = [[NSDate alloc] initWithTimeIntervalSince1970:ndate.doubleValue];
-    
-    cell.sunriseLabel.text = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:date]];
-    
-    ndate = dic[@"sys"][@"sunset"];
-    date = [[NSDate alloc] initWithTimeIntervalSince1970:ndate.doubleValue];
-    
-    cell.sunsetLabel.text = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:date]];
-    
-    cell.weatherLabel.text = dic[@"weather"][0][@"description"];
-    
-    NSNumber * nlatitude = dic[@"coord"][@"lat"];
-    NSNumber * nlongitude =  dic[@"coord"][@"lon"];
-    
-    MKCoordinateRegion reg;
-    reg.center.latitude = nlatitude.floatValue;
-    reg.center.longitude = nlongitude.floatValue;
-    reg.span.latitudeDelta = 0.5;
-    reg.span.longitudeDelta = 0.5;
-	[cell.map setRegion:reg animated:NO];
-    cell.map.mapType = MKMapTypeHybrid;
-    cell.map.userInteractionEnabled = NO;
+        // Construimos la URL añadiendo la query
+        NSString * s = [NSString stringWithFormat:@"%@?q=%@&units=metric&lang=sp",OPE_W_URL,self.cities[indexPath.row]];
+        
+        s = [s stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        NSURL *url = [NSURL URLWithString:s];
+        
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        if (!data) {
+            NSLog(@"Error: no se han descargado datos.");
+        }
+        
+        NSDictionary * dic;
+        NSError * err;
+        dic = [NSJSONSerialization JSONObjectWithData:data
+                                              options:NSJSONReadingMutableContainers
+                                                error:&err];
+        if (!dic) {
+            NSLog(@"Error parsing JSON = %@",[err localizedDescription]);
+        }
+        
+        dispatch_async( dispatch_get_main_queue(), ^{
+            
+            if(data && dic){// Log main keys
+                /*for (NSString *key in [dic allKeys]) {
+                    NSLog(@"KEY = %@ -> %@",key, dic[key]);
+                }*/
+                
+                NSNumber * ntemp = dic[@"main"][@"temp"];
+                cell.tempLabel.text = [NSString stringWithFormat:@"%d ºC",ntemp.intValue];
+                
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"HH:mm"];
+                
+                NSNumber * ndate = dic[@"sys"][@"sunrise"];
+                NSDate * date = [[NSDate alloc] initWithTimeIntervalSince1970:ndate.doubleValue];
+                
+                cell.sunriseLabel.text = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:date]];
+                
+                ndate = dic[@"sys"][@"sunset"];
+                date = [[NSDate alloc] initWithTimeIntervalSince1970:ndate.doubleValue];
+                
+                cell.sunsetLabel.text = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:date]];
+                
+                cell.weatherLabel.text = dic[@"weather"][0][@"description"];
+                
+                NSNumber * nlatitude = dic[@"coord"][@"lat"];
+                NSNumber * nlongitude =  dic[@"coord"][@"lon"];
+                
+                MKCoordinateRegion reg;
+                reg.center.latitude = nlatitude.floatValue;
+                reg.center.longitude = nlongitude.floatValue;
+                reg.span.latitudeDelta = 0.5;
+                reg.span.longitudeDelta = 0.5;
+                [cell.map setRegion:reg animated:NO];
+                cell.map.mapType = MKMapTypeHybrid;
+                cell.map.userInteractionEnabled = NO;
+            }
+            [self decrNetActivity];
+        });
+    });
     
     return cell;
 }
+
+
+
 
 - (void) loadCities {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"cities" ofType:@"plist"];
